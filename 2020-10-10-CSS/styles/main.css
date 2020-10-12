@@ -1,0 +1,17 @@
+button {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+}
+
+button:nth-child(1) {
+    background-color: green;
+}
+
+button:nth-child(2) {
+    background-color: red;
+}
+
+button:nth-child(2):hover+button:nth-child(1) {
+    opacity: 0;
+}

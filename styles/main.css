@@ -1,0 +1,16 @@
+.first-button {
+    color: coral;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    font-size: 2em;
+    background: linear-gradient(to right, yellow, blue)
+}
+
+.first-button:first-child {
+    color: red;
+}
+
+.first-button:last-child {
+    color: blue;
+}
