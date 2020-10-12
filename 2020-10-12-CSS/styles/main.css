@@ -2,6 +2,7 @@ div {
     width: 80%;
     height: 50px;
     margin: 20px auto;
+    position: relative;
 }
 
 div:nth-child(1) {
@@ -24,122 +25,49 @@ div:nth-child(5) {
     background-color: forestgreen;
 }
 
-div:nth-child(1)::before {
+div::before {
     content: "";
     position: absolute;
     width: 0;
     height: 0;
     border-top: 25px solid transparent;
-    border-right: 50px solid coral;
+    border-right: 50px solid;
     border-bottom: 25px solid transparent;
-    top: 20px;
-    left: 142px;
+    left: -50px;
 }
 
+div::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 25px solid transparent;
+    border-left: 50px solid green;
+    border-bottom: 25px solid transparent;
+    right: -50px;
+}
+
+div:nth-child(1)::before,
 div:nth-child(1)::after {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-top: 25px solid transparent;
-    border-left: 50px solid coral;
-    border-bottom: 25px solid transparent;
-    top: 20px;
-    right: 142px;
+    border-color: transparent coral transparent;
 }
 
-div:nth-child(2)::before {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-top: 25px solid transparent;
-    border-right: 50px solid darkblue;
-    border-bottom: 25px solid transparent;
-    top: 90px;
-    left: 142px;
-}
-
+div:nth-child(2)::before,
 div:nth-child(2)::after {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-top: 25px solid transparent;
-    border-left: 50px solid darkblue;
-    border-bottom: 25px solid transparent;
-    top: 90px;
-    right: 142px;
+    border-color: transparent darkblue transparent;
 }
 
-div:nth-child(3)::before {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-top: 25px solid transparent;
-    border-right: 50px solid darkorange;
-    border-bottom: 25px solid transparent;
-    top: 160px;
-    left: 142px;
-}
-
+div:nth-child(3)::before,
 div:nth-child(3)::after {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-top: 25px solid transparent;
-    border-left: 50px solid darkorange;
-    border-bottom: 25px solid transparent;
-    top: 160px;
-    right: 142px;
+    border-color: transparent darkorange transparent;
 }
 
-div:nth-child(4)::before {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-top: 25px solid transparent;
-    border-right: 50px solid darkred;
-    border-bottom: 25px solid transparent;
-    top: 230px;
-    left: 142px;
-}
-
+div:nth-child(4)::before,
 div:nth-child(4)::after {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-top: 25px solid transparent;
-    border-left: 50px solid darkred;
-    border-bottom: 25px solid transparent;
-    top: 230px;
-    right: 142px;
+    border-color: transparent darkred transparent;
 }
 
-div:nth-child(5)::before {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-top: 25px solid transparent;
-    border-right: 50px solid forestgreen;
-    border-bottom: 25px solid transparent;
-    top: 300px;
-    left: 142px;
-}
-
+div:nth-child(5)::before,
 div:nth-child(5)::after {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-top: 25px solid transparent;
-    border-left: 50px solid forestgreen;
-    border-bottom: 25px solid transparent;
-    top: 300px;
-    right: 142px;
+    border-color: transparent forestgreen transparent;
 }
