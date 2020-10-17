@@ -121,11 +121,11 @@
 }
 
 .ship {
-    position: relative;
+    position: absolute;
     width: 48px;
     z-index: 4;
-    top: -244px;
-    left: 726px;
+    top: -17px;
+    left: 528px;
 }
 
 .icons {
@@ -133,7 +133,7 @@
     height: 50px;
     position: relative;
     z-index: 4;
-    top: -190px;
+    top: -168px;
     margin: 0 auto;
 }
 
@@ -179,7 +179,7 @@
     width: 350px;
     height: 50px;
     z-index: 4;
-    top: -159px;
+    top: -136px;
     margin: 0 auto;
     color: #f3f3f3;
     font-weight: bold;
@@ -208,6 +208,6 @@
     width: 100%;
     height: 100%;
     background-color: #266b97;
-    top: -346px;
+    top: -320px;
     z-index: 2;
 }
