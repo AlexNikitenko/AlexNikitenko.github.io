@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Houschka Pro';
+    src: local('Houschka Pro Bold'), local('Houschka-Pro-Bold'),
+        url('HouschkaPro-Bold.woff2') format('woff2'),
+        url('HouschkaPro-Bold.woff') format('woff'),
+        url('HouschkaPro-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }
