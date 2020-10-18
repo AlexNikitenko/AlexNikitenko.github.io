@@ -77,13 +77,13 @@
         height: 32px;
         background-color: white;
         border-radius: 5px;
+        border: 0;
         font-family: 'Arial', sans-serif;
         font-size: 12px;
         line-height: 25px;
         color: #808080;
         padding-left: 11px;
         padding-top: 3px;
-        border: 0;
     }
     
     .button button {
@@ -94,12 +94,12 @@
         left: 377px;
         top: 2px;
         border-radius: 5px;
+        border: 0;
         color: white;
         font-size: 14px;
         font-weight: bold;
         line-height: 25px;
         letter-spacing: -1px;
-        border: 0;
     }
     
     .white-line {
