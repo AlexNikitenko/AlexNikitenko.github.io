@@ -83,6 +83,7 @@
         color: #808080;
         padding-left: 11px;
         padding-top: 3px;
+        border: 0;
     }
     
     .button button {
@@ -98,6 +99,7 @@
         font-weight: bold;
         line-height: 25px;
         letter-spacing: -1px;
+        border: 0;
     }
     
     .white-line {
