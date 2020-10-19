@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap%27');
 @font-face {
     font-family: 'Houschka Pro';
     src: local('./fonts/Houschka Pro Bold'), local('./fonts/Houschka-Pro-Bold'), url('./fonts/HouschkaPro-Bold.woff2') format('woff2'), url('./fonts/HouschkaPro-Bold.woff') format('woff'), url('HouschkaPro-Bold.ttf') format('truetype');
@@ -46,7 +46,7 @@
     line-height: 16px;
     left: 51px;
     top: 16px;
-    letter-spacing: -2px;
+    letter-spacing: 4px;
     color: #fefefe;
     text-shadow: 0px 4px 0px rgba(0, 0, 0, 0.17);
 }
