@@ -6,9 +6,14 @@
     font-style: normal;
 }
 
+html,
+body {
+    height: 100%;
+}
+
 .main {
     background-color: #b9d6ef;
-    height: 1000px;
+    height: 100%;
     position: relative;
     font-family: 'Houschka Pro', sans-serif;
 }
@@ -151,6 +156,13 @@ button {
 
 .icon-days {
     left: 29px;
+}
+
+.circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #b9d6ef;
 }
 
 .icon-hours {
