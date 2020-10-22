@@ -1,0 +1,42 @@
+.main {
+    margin: 70px 50px;
+    position: relative;
+}
+
+.item {
+    border: 2px solid black;
+    position: absolute;
+    background-color: khaki;
+    width: 60px;
+    height: 100px;
+    border-radius: 5px;
+    z-index: 0;
+}
+
+.item2 {
+    left: 50px;
+}
+
+.item3 {
+    left: 100px;
+}
+
+.item4 {
+    left: 150px;
+}
+
+.backside {
+    border: 2px solid black;
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background: content-box radial-gradient(crimson, skyblue);
+    width: 60px;
+    height: 100px;
+    border-radius: 5px;
+    display: none;
+}
+
+.item:hover>.backside {
+    display: block;
+}
