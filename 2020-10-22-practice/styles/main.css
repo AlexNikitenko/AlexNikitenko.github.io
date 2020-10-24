@@ -10,7 +10,6 @@
     width: 60px;
     height: 100px;
     border-radius: 5px;
-    z-index: 0;
 }
 
 .item2 {
@@ -26,17 +25,34 @@
 }
 
 .backside {
-    border: 2px solid black;
     position: absolute;
-    top: -2px;
-    left: -2px;
+    border: 2px solid black;
+    top: -12px;
+    left: 0;
     background: content-box radial-gradient(crimson, skyblue);
     width: 60px;
     height: 100px;
     border-radius: 5px;
-    display: none;
+    visibility: hidden;
 }
 
-.item:hover>.backside {
-    display: block;
+.backside2 {
+    left: 50px;
+}
+
+.backside3 {
+    left: 100px;
+}
+
+.backside4 {
+    left: 150px;
+}
+
+.item:hover+.backside {
+    position: absolute;
+    visibility: visible;
+}
+
+.item:hover+.item {
+    display: none;
 }
