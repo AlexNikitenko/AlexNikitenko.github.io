@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
     font-family: 'Graphik LCG';
     src: url('GraphikLCG-MediumItalic.eot');
     src: local('Graphik LCG Medium Italic'), local('GraphikLCG-MediumItalic'), url('GraphikLCG-MediumItalic.eot?#iefix') format('embedded-opentype'), url('GraphikLCG-MediumItalic.woff2') format('woff2'), url('GraphikLCG-MediumItalic.woff') format('woff'), url('GraphikLCG-MediumItalic.ttf') format('truetype');
@@ -52,16 +52,10 @@
     src: local('Graphik LCG Extralight Italic'), local('GraphikLCG-ExtralightItalic'), url('GraphikLCG-ExtralightItalic.eot?#iefix') format('embedded-opentype'), url('GraphikLCG-ExtralightItalic.woff2') format('woff2'), url('GraphikLCG-ExtralightItalic.woff') format('woff'), url('GraphikLCG-ExtralightItalic.ttf') format('truetype');
     font-weight: 200;
     font-style: italic;
-}
+} */
 
-@font-face {
-    font-family: 'Graphik LCG';
-    src: url('GraphikLCG-Regular.eot');
-    src: local('Graphik LCG Regular'), local('GraphikLCG-Regular'), url('GraphikLCG-Regular.eot?#iefix') format('embedded-opentype'), url('GraphikLCG-Regular.woff2') format('woff2'), url('GraphikLCG-Regular.woff') format('woff'), url('GraphikLCG-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
 
+/* 
 @font-face {
     font-family: 'Graphik LCG';
     src: url('GraphikLCG-BoldItalic.eot');
@@ -110,6 +104,14 @@
     font-style: normal;
 }
 
+/* @font-face {
+    font-family: 'Graphik LCG';
+    src: url('GraphikLCG-Bold.eot');
+    src: local('Graphik LCG Bold'), local('GraphikLCG-Bold'), url('GraphikLCG-Bold.eot?#iefix') format('embedded-opentype'), url('GraphikLCG-Bold.woff2') format('woff2'), url('GraphikLCG-Bold.woff') format('woff'), url('GraphikLCG-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+} */
+
 @font-face {
     font-family: 'Graphik LCG';
     src: url('GraphikLCG-Bold.eot');
@@ -120,30 +122,141 @@
 
 @font-face {
     font-family: 'Graphik LCG';
-    src: url('GraphikLCG-Extralight.eot');
-    src: local('Graphik LCG Extralight'), local('GraphikLCG-Extralight'), url('GraphikLCG-Extralight.eot?#iefix') format('embedded-opentype'), url('GraphikLCG-Extralight.woff2') format('woff2'), url('GraphikLCG-Extralight.woff') format('woff'), url('GraphikLCG-Extralight.ttf') format('truetype');
-    font-weight: 200;
+    src: url('GraphikLCG-Regular.eot');
+    src: local('Graphik LCG Regular'), local('GraphikLCG-Regular'), url('GraphikLCG-Regular.eot?#iefix') format('embedded-opentype'), url('GraphikLCG-Regular.woff2') format('woff2'), url('GraphikLCG-Regular.woff') format('woff'), url('GraphikLCG-Regular.ttf') format('truetype');
+    font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Graphik LCG';
-    src: url('GraphikLCG-ThinItalic.eot');
-    src: local('Graphik LCG Thin Italic'), local('GraphikLCG-ThinItalic'), url('GraphikLCG-ThinItalic.eot?#iefix') format('embedded-opentype'), url('GraphikLCG-ThinItalic.woff2') format('woff2'), url('GraphikLCG-ThinItalic.woff') format('woff'), url('GraphikLCG-ThinItalic.ttf') format('truetype');
-    font-weight: 100;
-    font-style: italic;
+    font-family: 'Gotham Pro';
+    src: url('GothamPro.eot');
+    src: local('Gotham Pro'), local('GothamPro'), url('GothamPro.eot?#iefix') format('embedded-opentype'), url('GothamPro.woff') format('woff'), url('GothamPro.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
-    font-family: 'Graphik LCG';
-    src: url('GraphikLCG-RegularItalic.eot');
-    src: local('Graphik LCG Regular Italic'), local('GraphikLCG-RegularItalic'), url('GraphikLCG-RegularItalic.eot?#iefix') format('embedded-opentype'), url('GraphikLCG-RegularItalic.woff2') format('woff2'), url('GraphikLCG-RegularItalic.woff') format('woff'), url('GraphikLCG-RegularItalic.ttf') format('truetype');
-    font-weight: normal;
-    font-style: italic;
+    font-family: 'Gotham Pro Narrow';
+    src: url('GothamProNarrow-Bold.eot');
+    src: local('Gotham Pro Narrow Bold'), local('GothamProNarrow-Bold'), url('GothamProNarrow-Bold.eot?#iefix') format('embedded-opentype'), url('GothamProNarrow-Bold.woff') format('woff'), url('GothamProNarrow-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
 }
 
 body {
     background-color: #FFFFFF;
     font-family: 'Graphik LCG', sans-serif;
     font-size: 18px;
+    color: #333333;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #333333;
+}
+
+
+/* div {
+    border: 1px solid black;
+} */
+
+.header-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 103px;
+}
+
+.main-logo a {
+    display: block;
+    margin-left: 143px;
+    margin-top: 48px;
+    width: 290px;
+    min-height: 45px;
+    font-family: "Gotham Pro", sans-serif;
+    font-size: 24px;
+    line-height: 26px;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-weight: bold;
+}
+
+.main-logo a::before {
+    content: "";
+    position: absolute;
+    width: 62px;
+    height: 62px;
+    background-image: url("../images/logo.svg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    top: -21px;
+    left: -82px;
+}
+
+.main-navigation-list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    width: 900px;
+    margin-top: 36px;
+    margin-right: 50px;
+    letter-spacing: 0.4px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.main-navigation-list-item {
+    width: 135px;
+    position: absolute;
+}
+
+.our-directions {
+    left: 153px;
+}
+
+.portfolio {
+    left: 358px;
+}
+
+.contacts {
+    left: 507px;
+}
+
+.request-breaf {
+    position: absolute;
+    display: block;
+    width: 196px;
+    box-sizing: border-box;
+    height: 45px;
+    font-size: 14px;
+    line-height: 23px;
+    letter-spacing: 0.4px;
+    background: linear-gradient(to left, #5C9FF9, #0058DC);
+    color: #ffffff;
+    border-radius: 2px;
+    padding-top: 12px;
+    padding-left: 26px;
+    top: -17px;
+    right: 59px;
+}
+
+.request-breaf::after {
+    content: "";
+    position: absolute;
+    background-image: url("../images/row-right.svg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    width: 30px;
+    height: 10px;
+    top: 19px;
+    right: 11px;
 }
