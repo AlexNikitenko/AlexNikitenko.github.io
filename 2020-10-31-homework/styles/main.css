@@ -46,6 +46,10 @@ input {
     font-size: 46px;
 }
 
+.hidden {
+    display: none;
+}
+
 button {
     width: 220px;
     height: 60px;
