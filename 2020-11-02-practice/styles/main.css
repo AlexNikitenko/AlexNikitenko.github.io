@@ -1,0 +1,21 @@
+body {
+    background-color: darkgoldenrod;
+}
+
+.some-image {
+    width: 300px;
+    margin: 200px auto;
+}
+
+img {
+    border: none;
+    border-radius: 0%;
+    transform: none;
+    transition: border 2s ease 0s, border-radius 5s ease 5s, transform 5s ease 5s;
+}
+
+img:hover {
+    border: 5px solid black;
+    border-radius: 25px;
+    transform: rotate(180deg);
+}
