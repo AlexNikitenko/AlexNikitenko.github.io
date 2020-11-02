@@ -11,7 +11,7 @@ img {
     border: none;
     border-radius: 0%;
     transform: none;
-    transition: border 2s ease 0s, border-radius 5s ease 5s, transform 5s ease 5s;
+    transition: border 5s ease 0s, border-radius 5s ease 5s, transform 5s ease 10s;
 }
 
 img:hover {
