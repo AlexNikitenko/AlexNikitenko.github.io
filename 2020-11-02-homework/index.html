@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11-02-2020</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="./styles/main.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <nav>
+            <ul class="buttons-list">
+                <li><button>Создатели</button></li>
+                <li><button>Актеры</button>
+                </li>
+                <li><button>Отзывы</button>
+                </li>
+                <li><button>Рецензии</button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main itemscope itemtype="http://schema.org/Movie">
+
+        <h1 itemprop="name">Фильм "Вне себя"</h1>
+        <p itemprop="description">В будущем становится возможным победить смерть с помощью имплантирования своего сознания в молодое тело, созданное методом генной инженерии. Операция эта дорогостоящая и проводится подпольно, а поэтому доступна лишь ограниченному кругу лиц. Умирающий
+            пожилой бизнесмен решается на эту операцию и получает возможность прожить еще одну жизнь. Однако, когда ему приоткрывается тайна происхождения своего нового тела, за ним начинает охоту секретная организация, которая не остановится ни перед
+            чем, чтобы защитить свои интересы.</p>
+        <p itemprop="countryOfOrigin" itemscope itemtype="http://schema.org/Country">Страна происхождения: США</p>
+        <div class="wrapper">
+            <section>
+                <h2 itemprop="director" itemscope itemtype="http://schema.org/Person">Режиссер: <span itemprop="name">Тарсем Сингх</span></h2>
+                <h2 itemprop="producer" itemscope itemtype="http://schema.org/Person">Продюссеры:</h2>
+
+                <ul>
+                    <li><span itemprop="name">Рэм Бергман</span></li>
+                    <li><span itemprop="name">Петер Шлессель</span></li>
+                    <li><span itemprop="name">Джеймс Д. Стерн</span></li>
+                </ul>
+                <h2 itemprop="musicBy" itemscope itemtype="http://schema.org/Person">Композиторы:</h2>
+                <ul>
+                    <li><span itemprop="name">Дуду Арам</span></li>
+                    <li><span itemprop="name">Antonio Pinto</span></li>
+                </ul>
+                <h2>Сценаристы:</h2>
+                <ul>
+                    <li><span itemprop="name">Дэвид Пастор</span></li>
+                    <li><span itemprop="name">Алекс Пастор</span></li>
+                </ul>
+            </section>
+            <article>
+                <img src="./images/poster.jpg" alt="">
+                <a href="#">Смотреть онлайн</a>
+            </article>
+        </div>
+    </main>
+    <footer>
+        <p>All Rights Reserved (C)</p>
+    </footer>
+
+</body>
+
+</html>
