@@ -4,15 +4,14 @@ body {
 
 .some-image {
     width: 300px;
+    height: 300px;
+    display: block;
+    box-sizing: border-box;
     margin: 200px auto;
 }
 
 img {
-    width: 300px;
-    height: 300px;
-    display: block;
-    box-sizing: border-box;
-    border: none;
+    border: 5px solid transparent;
     border-radius: 0%;
     transform: none;
     transition: border 5s ease 0s, border-radius 5s ease 5s, transform 5s ease 10s;
