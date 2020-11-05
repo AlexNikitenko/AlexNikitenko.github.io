@@ -20,5 +20,6 @@
   top: 67px;
   left: 217px;
   transform-origin: 1px 150px;
-  animation: anim1 60s linear infinite;
+  animation: anim1 60s steps(60, end) infinite ;
+  box-shadow: 5px 10px 10px rgba(0,0,0,1)
 }
