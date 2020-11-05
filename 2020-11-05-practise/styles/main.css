@@ -1,0 +1,24 @@
+@keyframes anim1 {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.watch {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  background: url("../images/22.png")
+}
+
+.arrow {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 150px;
+  background-color: black;
+  top: 67px;
+  left: 217px;
+  transform-origin: 1px 150px;
+  animation: anim1 60s linear infinite;
+}
