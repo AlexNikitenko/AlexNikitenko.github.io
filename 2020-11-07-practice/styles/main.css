@@ -2,8 +2,20 @@
   0% {
     top: 0px;
   }
+  10% {
+    top: 10px;
+  }
+  20% {
+    top: 20px;
+  }
+  30% {
+    top: 30px;
+  }
+  40% {
+    top: 40px;
+  }
   50% {
-    top: 150px;
+    top: 50px;
   }
   100% {
     top: 300px;
@@ -35,7 +47,7 @@ body {
   background-image: url("../images/tore.png");
   width: 160px;
   height: 160px;
-  animation: falling 1s linear 2s infinite normal;
+  animation: falling 1.5s linear 2s infinite normal;
 }
 
 .water {
@@ -48,7 +60,7 @@ body {
   border: 5px solid #43B9FF;
   border-radius: 50%;
   visibility: hidden;
-  animation: resize 1s linear 1s infinite normal;
+  animation: resize 1.5s linear 3.5s infinite normal;
 }
 
 .water2 {
@@ -61,5 +73,5 @@ body {
   border: 5px solid #43B9FF;
   border-radius: 50%;
   visibility: hidden;
-  animation: resize 1s linear 1s infinite normal;
+  animation: resize 1.5s linear 3.5s infinite normal;
 }
