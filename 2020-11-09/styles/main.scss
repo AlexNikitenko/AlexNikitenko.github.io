@@ -1,0 +1,17 @@
+$box_size: 50px;
+
+.scene {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: $box_size * 5 + 30px;
+  height: $box_size * 4 + 30px;;
+}
+
+.box {
+  height: $box_size;
+  width: $box_size;
+  background-color: gray;
+}
+
