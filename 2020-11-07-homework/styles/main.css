@@ -9,7 +9,6 @@
 
 @keyframes jumping {
 
-  /*1st step */
   0% {
     top: 313px;
     left: 9px;
@@ -22,7 +21,6 @@
     top: 263px;
     left: 126px;
   }
-  /*2nd step */
   15% {
     top: 190px;
     left: 180px;
@@ -31,7 +29,6 @@
     top: 215px;
     left: 230px;
    }
-/*3rd step */
   25% {
     top: 140px;
     left: 290px;
@@ -40,7 +37,6 @@
     top: 163px;
     left: 345px;
   }
-  /*4th step */
   35% {
     top: 100px;
     left: 400px;
@@ -81,8 +77,12 @@
     top: 100px;
     left: 80px;
   }
-  100% {
+  90% {
     top: 113px;
+    left: 9px;
+  }
+  100% {
+    top: 313px;
     left: 9px;
   }
 }
@@ -91,17 +91,39 @@
   0% {
     height: 250px;
   }
-  100% {
+  5% {
     height: 50px;
   }
+  10% {
+    height: 50px;
+  }
+  50% {
+    height: 50px;
+  }
+  60% {
+    height: 250px;
+  }
+  100% {
+    height: 250px;
+  }
 }
+
 
 @keyframes resize2 {
   0% {
     height: 200px;
   }
-  100% {
+  10% {
     height: 100px;
+  }
+  50% {
+    height: 100px;
+  }
+  60% {
+    height: 200px;
+  }
+  100% {
+    height: 200px;
   }
 }
 
@@ -109,8 +131,17 @@
   0% {
     height: 100px;
   }
-  100% {
+  10% {
     height: 200px;
+  }
+  50% {
+    height: 200px;
+  }
+  60% {
+    height: 100px;
+  }
+  100% {
+    height: 100px;
   }
 }
 
@@ -118,8 +149,17 @@
   0% {
     height: 50px;
   }
-  100% {
+  10% {
     height: 250px;
+  }
+  50% {
+    height: 250px;
+  }
+  60% {
+    height: 50px;
+  }
+  100% {
+    height: 50px;
   }
 }
 
@@ -139,7 +179,6 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
-  /* animation: mirror 1s linear 5.5s infinite normal running; */
 }
 
 .step {
@@ -149,12 +188,12 @@
 }
 
 .step1 {
-  animation: resize4 1s linear 7.5s 1 normal forwards running;
+  animation: resize4 9s linear 5.5s infinite normal forwards running;
 }
 
 .step2 {
   height: 100px;
-  animation: resize3 1s linear 6.5s 1 normal forwards running;
+  animation: resize3 9s linear 5.5s infinite normal forwards running;
 }
 
 .step3 {
@@ -163,12 +202,12 @@
 
 .step4 {
   height: 200px;
-  animation: resize2 1s linear 5.5s 1 normal forwards running;
+  animation: resize2 9s linear 5.5s infinite normal forwards running;
 }
 
 .step5 {
   height: 250px;
-  animation: resize1 .5s linear 5.5s normal forwards running;
+  animation: resize1 9s linear 5.5s infinite normal forwards running;
 }
 
 .ball {
@@ -180,13 +219,5 @@
   content: '';
   top: 313px;
   left: 9px;
-  animation: jumping 9s linear 2s 1 normal forwards running;
-  /* animation-name: jumping;
-  animation-duration: 2s;
-  animation-timing-function: ease;
-  animation-delay: 2s;
-  animation-iteration-count: infinite;
-  animation-direction: normal;
-  animation-fill-mode: none;
-  animation-play-state: running; */
+  animation: jumping 9s linear 2s infinite normal forwards running;
 }
