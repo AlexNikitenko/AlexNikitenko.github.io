@@ -71,6 +71,11 @@ div {
   margin-top: 60px;
 }
 
+.lorem:last-child {
+  margin-top: 60px;
+  margin-right: 240px;
+}
+
 .article {
   grid-area: ar;
 }
@@ -83,7 +88,7 @@ div {
   position: relative;
   
   div {
-    width: 200px;
+    width: 500px;
     height: 100px;
     box-sizing: border-box;
     flex-grow: 1;
