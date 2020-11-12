@@ -1,0 +1,154 @@
+@keyframes scroll {
+  0% {
+      transform: translate(0, 0);
+  }
+  100% {
+      transform: translate(-100%, 0)
+  }
+}
+
+div {
+  border: 2px solid black;
+}
+
+.main {
+  height: 98vh;
+  display: grid;
+  grid-template-rows: 3fr 8fr 3fr 1fr 5fr 3fr;
+  grid-template-columns: 3fr 4fr 4fr;
+  grid-template-areas: 
+  "he he he"
+  "as st st"
+  "as si si"
+  "ir ir ir"
+  "ft ft ft"
+  "fb fb fb";
+}
+
+.header {
+  grid-area: he;
+  display: flex;
+  flex-wrap: wrap;
+  div {
+    min-width: 200px;
+    flex-grow: 1;
+  }
+}
+
+.logo {
+  grid-area: lo;
+}
+
+.nav {
+  width: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  grid-area: na;
+}
+
+.aside {
+  grid-area: as;
+  overflow-y: scroll;
+  overflow-wrap: normal;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  // padding-left: 20px;
+}
+
+.lorem {
+  margin-top: 20px;
+  margin-right: 60px;
+  width: 60px;
+  height: 100px;
+  box-sizing: border-box;
+  overflow: scroll;
+}
+
+.lorem:nth-child(2n) {
+  margin-top: 60px;
+}
+
+.article {
+  grid-area: ar;
+}
+
+.section-text {
+  grid-area: st;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+  
+  div {
+    width: 200px;
+    height: 100px;
+    box-sizing: border-box;
+    flex-grow: 1;
+    overflow-x: scroll;
+  }
+}
+
+.lorem7 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  
+}
+
+.lorem8 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.section-img {
+  grid-area:si;
+}
+
+.infinite-row {
+  min-width: 400px;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  grid-area: ir;
+}
+
+@media (max-width: 400px) {
+  .infinite-row {
+    display: none;
+  }
+  .main {
+    height: 98vh;
+    display: grid;
+    grid-template-rows: 3fr 8fr 1fr 5fr 3fr;
+    grid-template-columns: 3fr 4fr 4fr;
+    grid-template-areas: 
+    "he he he"
+    "as st st"
+    "as si si"
+    "ft ft ft"
+    "fb fb fb";
+  }
+}
+
+.infinite-row span {
+  display: inline-block;
+  animation: scroll 15s infinite linear;
+}
+
+.footer-top {
+  grid-area: ft;
+  display: flex;
+  flex-wrap: wrap;
+    div {
+      width: 200px;
+      flex-grow: 1;
+    }
+}
+
+.footer-bottom {
+  grid-area: fb;
+}

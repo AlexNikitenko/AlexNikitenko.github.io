@@ -1,0 +1,217 @@
+@-webkit-keyframes scroll {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(-100%, 0);
+            transform: translate(-100%, 0);
+  }
+}
+
+@keyframes scroll {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(-100%, 0);
+            transform: translate(-100%, 0);
+  }
+}
+
+div {
+  border: 2px solid black;
+}
+
+.main {
+  height: 98vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 3fr 8fr 3fr 1fr 5fr 3fr;
+      grid-template-rows: 3fr 8fr 3fr 1fr 5fr 3fr;
+  -ms-grid-columns: 3fr 4fr 4fr;
+      grid-template-columns: 3fr 4fr 4fr;
+      grid-template-areas: "he he he" "as st st" "as si si" "ir ir ir" "ft ft ft" "fb fb fb";
+}
+
+.header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: he;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.header div {
+  min-width: 200px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.logo {
+  grid-area: lo;
+}
+
+.nav {
+  width: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  grid-area: na;
+}
+
+.aside {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: as;
+  overflow-y: scroll;
+  overflow-wrap: normal;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.lorem {
+  margin-top: 20px;
+  margin-right: 60px;
+  width: 60px;
+  height: 100px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow: scroll;
+}
+
+.lorem:nth-child(2n) {
+  margin-top: 60px;
+}
+
+.article {
+  grid-area: ar;
+}
+
+.section-text {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: st;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+}
+
+.section-text div {
+  width: 200px;
+  height: 100px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  overflow-x: scroll;
+}
+
+.lorem7 {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.lorem8 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.section-img {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: si;
+}
+
+.infinite-row {
+  min-width: 400px;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: ir;
+}
+
+@media (max-width: 400px) {
+  .infinite-row {
+    display: none;
+  }
+  .main {
+    height: 98vh;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 3fr 8fr 1fr 5fr 3fr;
+        grid-template-rows: 3fr 8fr 1fr 5fr 3fr;
+    -ms-grid-columns: 3fr 4fr 4fr;
+        grid-template-columns: 3fr 4fr 4fr;
+        grid-template-areas: "he he he" "as st st" "as si si" "ft ft ft" "fb fb fb";
+  }
+}
+
+.infinite-row span {
+  display: inline-block;
+  -webkit-animation: scroll 15s infinite linear;
+          animation: scroll 15s infinite linear;
+}
+
+.footer-top {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: ft;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.footer-top div {
+  width: 200px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.footer-bottom {
+  -ms-grid-row: 6;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: fb;
+}
+/*# sourceMappingURL=main.css.map */
