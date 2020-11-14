@@ -176,6 +176,27 @@ button {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  position: relative;
+}
+
+.sliders::before {
+  position: absolute;
+  content: '';
+  width: 7px;
+  height: 13px;
+  background: url("../images/row-left.svg");
+  top: 100px;
+  left: -30px;
+}
+
+.sliders::after {
+  position: absolute;
+  content: '';
+  width: 7px;
+  height: 13px;
+  background: url("../images/row-right.svg");
+  top: 100px;
+  right: -30px;
 }
 
 .slider {

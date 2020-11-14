@@ -131,6 +131,25 @@ button {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  position: relative;
+  &::before {
+    position: absolute;
+    content: '';
+    width: 7px;
+    height: 13px;
+    background: url("../images/row-left.svg");
+    top: 100px;
+    left: -30px;
+  }
+  &::after {
+    position: absolute;
+    content: '';
+    width: 7px;
+    height: 13px;
+    background: url("../images/row-right.svg");
+    top: 100px;
+    right: -30px;
+  }
 }
 
 .slider {
