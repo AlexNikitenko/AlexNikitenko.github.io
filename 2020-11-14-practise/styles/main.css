@@ -1,0 +1,300 @@
+body {
+  font-family: "Google Sans";
+  font-size: 14px;
+  line-height: 16px;
+  background-color: #FFFFFF;
+}
+
+h1 {
+  font-size: 24px;
+  line-height: 28px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.container {
+  width: 1110px;
+  margin: 0 auto;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header-top {
+  background-color: #F2F2F2;
+  height: 36px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-top: 10px;
+}
+
+.header-top .links-entry {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -ms-flex-line-pack: end;
+      align-content: flex-end;
+}
+
+.header-top a {
+  text-decoration: none;
+  color: #4F4F4F;
+}
+
+.feedback {
+  margin-right: 37px;
+}
+
+.navigation {
+  background-color: #FFFFFF;
+  border: 1px solid #E8E8EE;
+  height: 83px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.navigation .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.menu-button {
+  background-image: url("../images/menu-options.svg");
+  width: 26px;
+  height: 19px;
+  background-color: #FFFFFF;
+  border: none;
+  margin-top: 32px;
+}
+
+.search {
+  background-color: #FCFCFC;
+  color: #828282;
+  width: 651px;
+  height: 44px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-top: 20px;
+  margin-left: 196px;
+  position: relative;
+  border: 1px solid #E8E8EE;
+  border-radius: 3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.search i {
+  font-size: 10px;
+  position: absolute;
+  top: 17px;
+  left: 13px;
+}
+
+.search input {
+  border: none;
+  height: 42px;
+  width: 300px;
+  margin-left: 42px;
+}
+
+.search .town-list {
+  margin-left: 142px;
+  height: 30px;
+  width: 184px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 14px;
+  margin-top: 7px;
+  padding-top: 6px;
+  padding-left: 41px;
+  border-left: 1px solid #BDBDBD;
+  position: relative;
+}
+
+.search .town-list::after {
+  position: absolute;
+  content: "";
+  background: url("../images/polygon.svg");
+  width: 7px;
+  height: 7px;
+  top: 11px;
+  left: 125px;
+}
+
+.add-update {
+  width: 218px;
+  height: 44px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: linear-gradient(245.23deg, #32228A -43.18%, #745ACD 100%);
+  color: #ffffff;
+  border-radius: 3px;
+  margin-top: 20px;
+  padding-top: 7px;
+}
+
+.sliders {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.slider {
+  margin-top: 25px;
+  width: 358px;
+  height: 169px;
+  border-radius: 5px;
+}
+
+.slider1 {
+  background-image: url("../images/smartphone.jpg");
+}
+
+.slider2 {
+  background-image: url("../images/automobile.jpg");
+}
+
+.slider3 {
+  background-image: url("../images/smartphone.jpg");
+}
+
+.filter-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 27px;
+  border-top: 1px solid #E8E8EE;
+}
+
+.filter-block h1 {
+  padding-top: 17px;
+}
+
+.filters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 18px;
+  line-height: 21px;
+  width: 410px;
+  padding-top: 31px;
+}
+
+.currency, .price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.currency .option-value, .price .option-value {
+  color: #979FAD;
+  margin-left: 14px;
+  position: relative;
+}
+
+.currency .option-value::after, .price .option-value::after {
+  position: absolute;
+  content: "";
+  background: url("../images/polygon.svg");
+  width: 7px;
+  height: 7px;
+  top: 8px;
+}
+
+.currency .option-value::after {
+  left: 62px;
+}
+
+.price .option-value {
+  margin-right: 15px;
+}
+
+.price .option-value::after {
+  left: 130px;
+}
+
+.products {
+  margin-top: 27px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.products .product {
+  width: 253px;
+  height: 400px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-image: url("../images/product.jpg");
+  margin-bottom: 31px;
+}
+/*# sourceMappingURL=main.css.map */

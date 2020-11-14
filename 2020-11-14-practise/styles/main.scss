@@ -1,0 +1,227 @@
+body {
+  font-family: "Google Sans";
+  font-size: 14px;
+  line-height: 16px;
+  background-color: #FFFFFF;
+}
+
+h1 {
+  font-size: 24px;
+  line-height: 28px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.container {
+  width: 1110px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header-top {
+  background-color: #F2F2F2;
+  height: 36px;
+  box-sizing: border-box;
+  padding-top: 10px;
+
+  .links-entry {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-content: flex-end;
+  }
+  a {
+    text-decoration: none;
+    color: #4F4F4F;
+  }
+}
+
+.feedback {
+  margin-right: 37px;
+}
+
+.navigation {
+  background-color: #FFFFFF;
+  border: 1px solid#E8E8EE;
+  height: 83px;
+  box-sizing: border-box;
+  .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  }
+}
+
+.menu-button {
+  background-image: url("../images/menu-options.svg");
+  width: 26px;
+  height: 19px;
+  background-color: #FFFFFF;
+  border: none;
+  margin-top: 32px;
+}
+
+.search {
+  background-color: #FCFCFC;
+  color: #828282;
+  width: 651px;
+  height: 44px;
+  box-sizing: border-box;
+  margin-top: 20px;
+  margin-left: 196px;
+  position: relative;
+  border: 1px solid #E8E8EE;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: row;
+  i {
+    font-size: 10px;
+    position: absolute;
+    top: 17px;
+    left: 13px;
+  }
+  input {
+    border: none;
+    height: 42px;
+    width: 300px;
+    margin-left: 42px;
+  }
+  .town-list {
+    margin-left: 142px;
+    height: 30px;
+    width: 184px;
+    box-sizing: border-box;
+    font-size: 14px;
+    margin-top: 7px;
+    padding-top: 6px;
+    padding-left: 41px;
+    border-left: 1px solid #BDBDBD;
+    position: relative;
+    &::after {
+      position: absolute;
+      content: "";
+      background: url("../images/polygon.svg");
+      width: 7px;
+      height: 7px;
+      top: 11px;
+      left: 125px;
+    }
+  }
+}
+
+.add-update {
+  width: 218px;
+  height: 44px;
+  box-sizing: border-box;
+  background: linear-gradient(245.23deg, #32228A -43.18%, #745ACD 100%);
+  color: #ffffff;
+  border-radius: 3px;
+  margin-top: 20px;
+  padding-top: 7px;
+}
+
+.sliders {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.slider {
+  margin-top: 25px;
+  width: 358px;
+  height: 169px;
+  border-radius: 5px;
+}
+
+.slider1 {
+  background-image: url("../images/smartphone.jpg")
+}
+
+.slider2 {
+  background-image: url("../images/automobile.jpg")
+}
+
+.slider3 {
+  background-image: url("../images/smartphone.jpg")
+}
+
+.filter-block {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 27px;
+  border-top: 1px solid #E8E8EE;
+  h1 {
+    padding-top: 17px;
+  }
+}
+
+.filters {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 18px;
+  line-height: 21px;
+  width: 410px;
+  padding-top: 31px;
+
+}
+
+.currency, .price {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  .option-value {
+    color: #979FAD;
+    margin-left: 14px;
+    position: relative;
+    &::after {
+      position: absolute;
+      content: "";
+      background: url("../images/polygon.svg");
+      width: 7px;
+      height: 7px;
+      top: 8px;
+    }
+  }
+}
+
+.currency {
+  .option-value {
+    &::after {
+      left: 62px;
+    }
+  }
+}
+
+.price {
+  .option-value {
+    margin-right: 15px;
+
+    &::after {
+      left: 130px;
+    }
+  }
+}
+
+.products {
+  margin-top: 27px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  .product {
+    width: 253px;
+    height: 400px;
+    box-sizing: border-box;
+    background-image: url("../images/product.jpg");
+    margin-bottom: 31px;
+  }
+}
