@@ -337,8 +337,7 @@ button {
   .filter-block {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    max-width: 580px;
+    justify-content: space-around;
     margin: 0 auto;
   }
 }
@@ -475,10 +474,9 @@ button {
 
 @media (min-width: 358px) and (max-width: 750px) {
   .products {
-    max-width: 580px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
     margin: 0 auto;
     margin-top: 31px;

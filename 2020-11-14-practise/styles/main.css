@@ -415,10 +415,8 @@ button {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    max-width: 580px;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     margin: 0 auto;
   }
 }
@@ -617,7 +615,6 @@ button {
 
 @media (min-width: 358px) and (max-width: 750px) {
   .products {
-    max-width: 580px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -625,9 +622,8 @@ button {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     margin: 0 auto;
