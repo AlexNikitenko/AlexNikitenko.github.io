@@ -3,11 +3,18 @@ body {
   font-size: 14px;
   line-height: 16px;
   background-color: #FFFFFF;
+  overflow-x: hidden;
 }
 
 h1 {
   font-size: 24px;
   line-height: 28px;
+}
+
+@media (max-width: 358px) {
+  body {
+    overflow-x: scroll;
+  }
 }
 
 button {
@@ -216,6 +223,17 @@ button {
 
 .slider3 {
   background-image: url("../images/smartphone.jpg");
+}
+
+@media (min-width: 358px) and (max-width: 750px) {
+  .sliders {
+    max-width: 750px;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .products {
+    max-width: 750px;
+  }
 }
 
 .filter-block {
