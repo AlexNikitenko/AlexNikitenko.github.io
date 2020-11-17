@@ -189,7 +189,6 @@ button {
 
 @media (min-width: 750px) and (max-width: 1110px) {
   .navigation {
-    // max-width: 1110px;
     .container {
       max-width: 1110px;
     }
@@ -343,14 +342,6 @@ button {
     padding-right: 30px;
     width: 60px;
   }
-}
-
-@media (min-width: 750px) and (max-width: 1110px) {
-  // .filters {
-  //   display: flex;
-  //   flex-direction: row;
-  //   justify-content: space-between;
-  // }
 }
 
 .currency, .price {
