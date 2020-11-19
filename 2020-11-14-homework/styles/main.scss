@@ -22,9 +22,33 @@ button {
   cursor: pointer;
 }
 
-.container {
-  width: 1110px;
-  margin: 0 auto;
+@media (max-width: 358px) {
+  .container {
+    max-width: 358px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 358px) and (max-width: 750px) {
+  .container {
+    max-width: 750px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 750px) and (max-width: 1110px) {
+  .container {
+    min-width: 750px;
+    max-width: 1110px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1110px) {
+  .container {
+    width: 1110px;
+    margin: 0 auto;
+  }
 }
 
 .header {
@@ -55,10 +79,6 @@ button {
 
 @media (max-width: 358px) {
   .header-top {
-    .container {
-      max-width: 358px;
-      margin: 0 auto;
-    }
     .links-entry {
       position: absolute;
       right: 0;
@@ -68,10 +88,6 @@ button {
 
 @media (min-width: 358px) and (max-width: 750px) {
   .header-top {
-    .container {
-      max-width: 750px;
-      margin: 0 auto;
-    }
     .links-entry {
       position: absolute;
       right: 0;
@@ -81,10 +97,6 @@ button {
 
 @media (min-width: 750px) and (max-width: 110px) {
   .header-top {
-    .container {
-      max-width: 1110px;
-      margin: 0 auto;
-    }
     .links-entry {
       position: absolute;
       right: 0;
@@ -167,34 +179,25 @@ button {
 
 @media (max-width: 358px) {
   .navigation {
-    .container {
-      max-width: 358px;
+    .search {
+      display: none;
     }
-  }
-  .search {
-    display: none;
   }
 }
 
 @media (min-width: 358px) and (max-width: 750px) {
   .navigation {
-    .container {
-      max-width: 750px;
+    .search {
+      display: none;
     }
-  }
-  .search {
-    display: none;
   }
 }
 
 @media (min-width: 750px) and (max-width: 1110px) {
   .navigation {
-    .container {
-      max-width: 1110px;
+    .search {
+      display: none;
     }
-  }
-  .search {
-    display: none;
   }
 }
 
@@ -269,7 +272,7 @@ button {
     display: none;
   }
   .sliders {
-    max-width: 750px;
+    // max-width: 750px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -278,7 +281,7 @@ button {
 
 @media (min-width: 750px) and (max-width: 1110px) {
   .sliders {
-    max-width: 1110px;
+    // max-width: 1110px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
