@@ -310,7 +310,8 @@ button {
 }
 
 @media (min-width: 358px) and (max-width: 750px) {
-  .slider3 {
+  .slider3,
+  .slider2 {
     display: none;
   }
   .sliders {
@@ -328,6 +329,9 @@ button {
 }
 
 @media (min-width: 750px) and (max-width: 1110px) {
+  .slider3 {
+    display: none;
+  }
   .sliders {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -489,9 +493,8 @@ button {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -515,9 +518,8 @@ button {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
     margin: 0 auto;
@@ -553,9 +555,8 @@ button {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     margin: 0 auto;

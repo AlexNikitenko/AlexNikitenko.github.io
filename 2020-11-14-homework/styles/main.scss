@@ -268,11 +268,11 @@ button {
 }
 
 @media (min-width: 358px) and (max-width: 750px) {
-  .slider3 {
+  .slider3,
+  .slider2 {
     display: none;
   }
   .sliders {
-    // max-width: 750px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -280,8 +280,10 @@ button {
 }
 
 @media (min-width: 750px) and (max-width: 1110px) {
+  .slider3 {
+    display: none;
+  }
   .sliders {
-    // max-width: 1110px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -416,7 +418,7 @@ button {
   margin-top: 27px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   .product {
     width: 253px;
@@ -432,7 +434,7 @@ button {
     width: 253px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: nowrap;
     margin: 0 auto;
     margin-top: 31px;
@@ -455,7 +457,7 @@ button {
     max-width: 1110px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
     margin: 0 auto;
     margin-top: 31px;
