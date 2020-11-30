@@ -33,7 +33,6 @@ console.log(arr2, arr3);
 // необходимое для поиска этого числа.
 
 let iteration = 0;
-let num = 0;
 let arr4 = [];
 
 let fibonachi = (n) => n <= 1 ? n : fibonachi(n - 1) + fibonachi(n - 2);
