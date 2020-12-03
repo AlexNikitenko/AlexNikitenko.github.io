@@ -1,16 +1,11 @@
 // ближайшие два простые числа к числу 9991999
 
-// let what = checkForSimpleNumber(5);
-// what ? console.log('Простое число!') : console.log('Число не простое');
-
-
-let startValue = 14;
+let startValue = 9991999;
 let desiredValues = '';
-let desiredValue1 = null;
-let desiredValue2 = null;
 let quantity = 0;
+let maxNums = 2;
 
-const checkForSimpleNumber = (num) => {
+const checkForSimpleNum = (num) => {
     for (let i = 2; i < num; i++) {
         if (num % i === 0)
             return false;
@@ -18,23 +13,23 @@ const checkForSimpleNumber = (num) => {
     return true;
 }
 
-const iteration = (checkedValue) => {
-    while (quantity <= 2) {
-        for (let n = 1; n < checkedValue; n++) {
-            desiredValue1 = checkedValue - n;
-            desiredValue2 = checkedValue + n;
-            if (checkForSimpleNumber(desiredValue1)) {
-                quantity = quantity + 1;
-                return desiredValue1;
-            }
-            if (checkForSimpleNumber(desiredValue2)) {
-                quantity = quantity + 1;
-                return desiredValue2;
-            }
-        }
-    }
-    return desiredValues = `${desiredValue1} ${desiredValue2}`;
+const findSimpleNum = (startValue) => {
+    let radius = 0;
+    let foundNums = 0;
+    let str = '';
+    while (foundNums < maxNums) {
+        if (checkForSimpleNum(startValue + radius)) {
+            str = `${str} ${startValue + radius}`;
+            foundNums = foundNums + 1;
+        };
+        if (checkForSimpleNum(startValue - radius)) {
+            str = `${str} ${startValue - radius}`;
+            foundNums = foundNums + 1;
+        };
+        radius = radius + 1;
+    };
+    return str;
 }
 
 
-console.log(iteration(startValue));
+console.log(findSimpleNum(startValue));
