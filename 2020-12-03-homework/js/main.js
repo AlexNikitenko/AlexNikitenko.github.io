@@ -58,6 +58,6 @@ let num = randomInt2(1, 9991287);
 let ranks = countRank(num);
 
 
-console.log(num, ranks);
+console.log('Заданое число:', num, 'Количество разрядов: ', ranks);
 
 // 3) Задана квадратная матрица. Получить сумму элементов побочной диагонали.
