@@ -1,8 +1,6 @@
 // ближайшие два простые числа к числу 9991999
 
 let startValue = 9991999;
-let desiredValues = '';
-let quantity = 0;
 let maxNums = 2;
 
 const checkForSimpleNum = (num) => {
