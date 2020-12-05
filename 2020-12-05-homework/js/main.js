@@ -24,14 +24,14 @@ const findNum = (min, max) => {
         if (num < conceivedNum) {
             iteration = iteration + 1;
             str = str + ` Итерация №${iteration}, Не угадали, загаданное число больше`;
-            bottomLimit = num;
+            bottomLimit = num + 1; //добавляем 1, что бы повторно не сгенерировало число из нижней границы
             mainEl.innerHTML = mainEl.innerHTML + `${num}, ${str} <br>`;
 
             console.log(num, str);
         } else if (num > conceivedNum) {
             iteration = iteration + 1;
             str = str + `Итерация №${iteration}, Не угадали, загаданное число меньше`;
-            topLimit = num;
+            topLimit = num - 1; //убираем 1, что бы повторно не сгенерировало число из верхней границы
             mainEl.innerHTML = mainEl.innerHTML + `${num}, ${str} <br>`;
 
             console.log(num, str);
