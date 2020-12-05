@@ -43,6 +43,3 @@ const findNum = (min, max) => {
 };
 
 console.log(findNum(-2147483647, 2147483647));
-// findNum(-2147483647, 2147483647);
-
-// mainEl.innerHTML = console.log();
