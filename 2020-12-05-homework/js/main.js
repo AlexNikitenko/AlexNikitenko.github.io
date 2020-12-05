@@ -25,16 +25,16 @@ const findNum = (min, max) => {
             iteration = iteration + 1;
             str = str + ` Итерация №${iteration}, Не угадали, загаданное число больше`;
             bottomLimit = num + 1; //добавляем 1, что бы повторно не сгенерировало число из нижней границы
-            mainEl.innerHTML = mainEl.innerHTML + `${num}, ${str} <br>`;
+            mainEl.innerHTML = mainEl.innerHTML + `Вы загадали число: ${num}? ${str} <br>`;
 
-            console.log(num, str);
+            console.log('Вы загадали число: ', num, str);
         } else if (num > conceivedNum) {
             iteration = iteration + 1;
             str = str + `Итерация №${iteration}, Не угадали, загаданное число меньше`;
             topLimit = num - 1; //убираем 1, что бы повторно не сгенерировало число из верхней границы
-            mainEl.innerHTML = mainEl.innerHTML + `${num}, ${str} <br>`;
+            mainEl.innerHTML = mainEl.innerHTML + `Вы загадали число: ${num}? ${str} <br>`;
 
-            console.log(num, str);
+            console.log('Вы загадали число: ', num, str);
         } else {
             str = str + 'Ура, число угадано!'
         };
