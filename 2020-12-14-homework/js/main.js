@@ -17,6 +17,6 @@ goButton.addEventListener("click", (event) => {
             mainEl.innerHTML = mainEl.innerHTML + newStr;
         }
     }
-    mainEl.innerHTML = mainEl.innerHTML + `<br><textarea class="main-textarea" name="text" id="" cols="30" rows="1">${str}</textarea>`
+    mainEl.innerHTML = mainEl.innerHTML + `<br><textarea class="main-textarea" name="text" id="" cols="30" rows="1">${str}</textarea>`;
     return mainEl.innerHTML;
 })
