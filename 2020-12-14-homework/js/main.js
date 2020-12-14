@@ -3,12 +3,12 @@
 
 const mainText = document.querySelector('.main-textarea');
 const goButton = document.querySelector('.btn');
-const mainEl = document.querySelector('.main');
+const mainEl = document.querySelector('.additional');
 
 goButton.addEventListener("click", (event) => {
     let str = mainText.value;
     let arr = [];
-
+    mainEl.innerHTML = "";
     for (let i = 0; i < str.length; i++) {
         if (str[i] === ' ') {
             let oneWord = str.slice(0, i);
