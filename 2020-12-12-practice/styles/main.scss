@@ -1,0 +1,16 @@
+.main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 280px;
+}
+
+.cell-in {
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+}
+
+.yellow {
+    background-color: yellow;
+}
