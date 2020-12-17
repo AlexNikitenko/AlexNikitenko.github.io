@@ -5,12 +5,19 @@ const chestField = document.querySelector('.chest-board');
 const getCoordinateNums = document.querySelector('.coordinates--left');
 const getCoordinateVerbs = document.querySelector('.coordinates--bottom');
 
-const whiteKing = "&#9812"; //Белый король
-const whiteQueen = "&#9813"; //Белый ферзь
-const whiteRook = "&#9814"; //Бёлая ладья (тура)
-const whiteOfficer = "&#9815"; //Белый офицер (слон)
-const whiteHorse = "&#9816"; //Белый конь
-const whitePawn = "&#9817"; //Белая пешка
+// const whiteKing = "&#9812"; //Белый король
+// const whiteQueen = "&#9813"; //Белый ферзь
+// const whiteRook = "&#9814"; //Бёлая ладья (тура)
+// const whiteOfficer = "&#9815"; //Белый офицер (слон)
+// const whiteHorse = "&#9816"; //Белый конь
+// const whitePawn = "&#9817"; //Белая пешка
+
+const whiteKing = "&#9818"; //Белый король
+const whiteQueen = "&#9819"; //Белый ферзь
+const whiteRook = "&#9820"; //Бёлая ладья (тура)
+const whiteOfficer = "&#9821"; //Белый офицер (слон)
+const whiteHorse = "&#9822"; //Белый конь
+const whitePawn = "&#9823"; //Белая пешка
 
 const blackKing = "&#9818"; //Чёрный король
 const blackQueen = "&#9819"; //Чёрный ферзь
@@ -86,7 +93,15 @@ const createBoard = () => {
                 addChestPiece = addChestPiece + whiteKing;
             }
 
-            ((addChestPiece === whiteRook) || (addChestPiece === whiteHorse) || (addChestPiece === whiteQueen) || (addChestPiece === whiteOfficer) || (addChestPiece === whiteKing) || (addChestPiece === whitePawn)) ? chestField.innerHTML = chestField.innerHTML + `<div class="cell ${addClass} white-team" id="${cellId}">${addChestPiece}</div>`: chestField.innerHTML = chestField.innerHTML + `<div class="cell ${addClass} black-team" id="${cellId}">${addChestPiece}</div>`;;
+            if ((i === 6) || (i === 7)) {
+                chestField.innerHTML = chestField.innerHTML + `<div class="cell ${addClass} white-team" id="${cellId}">${addChestPiece}</div>`;
+            } else if ((i === 0) || (i === 1)) {
+                chestField.innerHTML = chestField.innerHTML + `<div class="cell ${addClass} black-team" id="${cellId}">${addChestPiece}</div>`;
+            } else {
+                chestField.innerHTML = chestField.innerHTML + `<div class="cell ${addClass}" id="${cellId}">${addChestPiece}</div>`;
+            }
+
+            // ((addChestPiece === whiteRook) || (addChestPiece === whiteHorse) || (addChestPiece === whiteQueen) || (addChestPiece === whiteOfficer) || (addChestPiece === whiteKing) || (addChestPiece === whitePawn)) ? chestField.innerHTML = chestField.innerHTML + `<div class="cell ${addClass} white-team" id="${cellId}">${addChestPiece}</div>`: chestField.innerHTML = chestField.innerHTML + `<div class="cell ${addClass} black-team" id="${cellId}">${addChestPiece}</div>`;;
             // chestField.innerHTML = chestField.innerHTML + `<div class="cell ${addClass}" id="${cellId}">${addChestPiece}</div>`;
 
         }
