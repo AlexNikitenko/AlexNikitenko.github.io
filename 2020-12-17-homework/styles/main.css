@@ -13,7 +13,7 @@
 }
 
 .coordinates--bottom {
-  margin-left: 103px;
+  margin-left: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -27,14 +27,16 @@
   width: 100px;
   height: 100px;
   border: 1px solid black;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 100px;
   text-align: center;
 }
 
 .chest-board {
-  width: 820px;
-  height: 820px;
+  width: 800px;
+  height: 800px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   display: -webkit-box;
@@ -51,6 +53,8 @@
 .cell {
   width: 100px;
   height: 100px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   border: 1px solid black;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 100px;
