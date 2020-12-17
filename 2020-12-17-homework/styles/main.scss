@@ -1,0 +1,64 @@
+.main {
+    margin: 50px auto;
+    width: 1000px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.coordinates--left {
+    width: 100px;
+    height: 820px;
+    box-sizing: border-box;
+}
+
+.coordinates--bottom {
+    width: 820px;
+    height: 100px;
+    box-sizing: border-box;
+    margin-left: 100px;
+    display: flex;
+    flex-direction: row;
+}
+
+.coordinate {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    text-align: center;
+}
+
+.chest-board {
+    width: 820px;
+    height: 820px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    text-align: center;
+}
+
+.cell-white {
+    background-color: bisque;
+}
+
+.cell-black {
+    background-color: #b58863;
+}
+
+.btn {
+    margin: 20px auto;
+    width: 200px;
+    height: 100px;
+    font-size: 40px;
+}

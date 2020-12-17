@@ -1,201 +1,189 @@
 @keyframes scroll {
-  0% {
-      transform: translate(0, 0);
-  }
-  100% {
-      transform: translate(-100%, 0)
-  }
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-100%, 0)
+    }
 }
-
 
 .main {
-  height: 98vh;
-  display: grid;
-  grid-template-rows: 50fr 150fr 30fr 100fr 50px;
-  div {
-  border: 2px solid black;
-}
+    height: 98vh;
+    display: grid;
+    grid-template-rows: 50fr 150fr 30fr 100fr 50px;
+    div {
+        border: 2px solid black;
+    }
 }
 
 .header {
-  min-width: 400px;
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  grid-template-areas: "lo na";
+    min-width: 400px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas: "lo na";
 }
 
 @media (max-width: 400px) {
-  .header {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas: 
-    "lo"
-    "na";
-  }
+    .header {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "lo" "na";
+    }
 }
 
 .logo {
-  grid-area: lo;
+    grid-area: lo;
 }
 
 .nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  grid-area: na;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    grid-area: na;
 }
 
 .grid-flowers {
-  display: grid;
-  grid-template-columns: 200px 1fr;
+    display: grid;
+    grid-template-columns: 200px 1fr;
 }
 
 .aside {
-  overflow-y: auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(6, 1fr);
-  grid-template-areas: 
-  "l1 ."
-  "l1 l2"
-  "l3 l2"
-  "l3 l4"
-  "l5 l4"
-  "l5 .";
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas: "l1 ." "l1 l2" "l3 l2" "l3 l4" "l5 l4" "l5 .";
 }
 
 .lorem {
-  margin-top: 20px;
-  margin-right: 60px;
-  width: 60px;
-  height: 100px;
-  box-sizing: border-box;
-  overflow: scroll;
+    margin-top: 20px;
+    margin-right: 60px;
+    width: 60px;
+    height: 100px;
+    box-sizing: border-box;
+    overflow: scroll;
 }
 
 .lorem1 {
-  grid-area: l1;
+    grid-area: l1;
 }
 
 .lorem2 {
-  grid-area: l2;
+    grid-area: l2;
 }
 
 .lorem3 {
-  grid-area: l3;
+    grid-area: l3;
 }
 
 .lorem4 {
-  grid-area: l4;
+    grid-area: l4;
 }
 
 .lorem5 {
-  grid-area: l5;
+    grid-area: l5;
 }
 
 .article {
-  grid-area: ar;
+    grid-area: ar;
 }
 
 .section {
-  display: grid;
-  grid-template-rows: 3fr 1fr;
-  min-width: 300px;
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+    min-width: 300px;
 }
 
 .section-text {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  position: relative;
-  
-  div {
-    width: 300px;
-    height: 150px;
-    box-sizing: border-box;
-    flex-grow: 1;
-    overflow: scroll;
-   }
-  img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: 1px solid red;
-  }
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+    div {
+        width: 300px;
+        height: 150px;
+        box-sizing: border-box;
+        flex-grow: 1;
+        overflow: scroll;
+    }
+    img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 1px solid red;
+    }
 }
 
 .lorem7 {
-  position: absolute;
-  left: 0;
-  top: 0;
-  img {
-    float: right;
-  }
+    position: absolute;
+    left: 0;
+    top: 0;
+    img {
+        float: right;
+    }
 }
 
 .lorem8 {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  img {
-    float: left;
-  }
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    img {
+        float: left;
+    }
 }
 
 .section-img {
-  height: 100px;
-  width: 100%;
-  background: url("../images/flowers.jpg");
-  background-repeat: repeat;
+    height: 100px;
+    width: 100%;
+    background: url("../images/flowers.jpg");
+    background-repeat: repeat;
 }
 
 .infinite-row {
-  min-width: 400px;
-  display: block;
-  white-space: nowrap;
-  overflow: hidden;
+    min-width: 400px;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 @media (max-width: 400px) {
-  .infinite-row {
-    display: none;
-  }
+    .infinite-row {
+        display: none;
+    }
 }
 
 .infinite-row span {
-  display: inline-block;
-  animation: scroll 15s infinite linear;
+    display: inline-block;
+    animation: scroll 15s infinite linear;
 }
 
 .footer-top {
-  min-width: 400px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas: "lo10 lo11";
+    min-width: 400px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "lo10 lo11";
 }
 
 @media (max-width: 400px) {
-  .footer-top {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas: 
-    "lo10"
-    "lo11";
-  }
+    .footer-top {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "lo10" "lo11";
+    }
 }
 
 .lorem10 {
-  grid-area: lo10;
+    grid-area: lo10;
 }
 
 .lorem11 {
-  grid-area: lo11;
+    grid-area: lo11;
 }
 
 .footer-bottom {
-  min-height: 50px;
-  background-image: url("../images/hills.jpg");
-  background-repeat: repeat;
+    min-height: 50px;
+    background-image: url("../images/hills.jpg");
+    background-repeat: repeat;
 }

@@ -1,0 +1,67 @@
+.main {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+      grid-template-areas: "in1 in1 in1 in1 btn5" "btn1 btn2 btn3 btn4 btn5" "in2 in2 in2 in2 btn5" "ab ab ab ab ab";
+}
+
+.input1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: in1;
+}
+
+.input2 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: in2;
+}
+
+.btn1 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: btn1;
+}
+
+.btn2 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: btn2;
+}
+
+.btn3 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: btn3;
+}
+
+.btn4 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 4;
+  grid-area: btn4;
+}
+
+.btn5 {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 5;
+  grid-area: btn5;
+}
+
+.additional-block {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
+  grid-area: ab;
+  border: 1px solid black;
+}
+
+.lighted {
+  background-color: yellow;
+}
+/*# sourceMappingURL=main.css.map */
