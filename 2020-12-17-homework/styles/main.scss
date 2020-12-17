@@ -6,17 +6,10 @@
     flex-wrap: wrap;
 }
 
-.coordinates--left {
-    width: 100px;
-    height: 820px;
-    box-sizing: border-box;
-}
+.coordinates--left {}
 
 .coordinates--bottom {
-    width: 820px;
-    height: 100px;
-    box-sizing: border-box;
-    margin-left: 100px;
+    margin-left: 103px;
     display: flex;
     flex-direction: row;
 }
