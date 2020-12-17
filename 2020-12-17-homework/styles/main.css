@@ -48,6 +48,7 @@
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  color: black;
 }
 
 .cell {
@@ -69,10 +70,11 @@
   background-color: #b58863;
 }
 
-.btn {
-  margin: 20px auto;
-  width: 200px;
-  height: 100px;
-  font-size: 40px;
+.black-team {
+  color: black;
+}
+
+.white-team {
+  color: white;
 }
 /*# sourceMappingURL=main.css.map */

@@ -86,7 +86,8 @@ const createBoard = () => {
                 addChestPiece = addChestPiece + whiteKing;
             }
 
-            chestField.innerHTML = chestField.innerHTML + `<div class="cell ${addClass}" id="${cellId}">${addChestPiece}</div>`;
+            ((addChestPiece === whiteRook) || (addChestPiece === whiteHorse) || (addChestPiece === whiteQueen) || (addChestPiece === whiteOfficer) || (addChestPiece === whiteKing) || (addChestPiece === whitePawn)) ? chestField.innerHTML = chestField.innerHTML + `<div class="cell ${addClass} white-team" id="${cellId}">${addChestPiece}</div>`: chestField.innerHTML = chestField.innerHTML + `<div class="cell ${addClass} black-team" id="${cellId}">${addChestPiece}</div>`;;
+            // chestField.innerHTML = chestField.innerHTML + `<div class="cell ${addClass}" id="${cellId}">${addChestPiece}</div>`;
 
         }
     }
