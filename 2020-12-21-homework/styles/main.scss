@@ -1,0 +1,64 @@
+.scene {
+    position: relative;
+    height: 676px;
+    border-bottom: 5px solid black;
+}
+
+.train {
+    position: absolute;
+    width: 700px;
+    right: 0;
+}
+
+.drive-forward {
+    animation-name: drive-forward;
+    animation-duration: 5s;
+    animation-delay: 0;
+    animation-iteration-count: 1;
+    animation-play-state: running;
+}
+
+.drive-backward {
+    animation-name: drive-backward;
+    animation-duration: 5s;
+    animation-delay: 0;
+    animation-iteration-count: 1;
+    animation-play-state: running;
+}
+
+.container {
+    margin: 50px auto;
+    width: 650px;
+}
+
+.btn {
+    width: 200px;
+    height: 50px;
+}
+
+.light {
+    fill: blue;
+}
+
+.light-on {
+    fill: yellow;
+    content: "light-on";
+}
+
+@keyframes drive-forward {
+    0% {
+        right: 0;
+    }
+    100% {
+        right: 1320px;
+    }
+}
+
+@keyframes drive-backward {
+    0% {
+        right: 1320px;
+    }
+    100% {
+        right: 0;
+    }
+}
