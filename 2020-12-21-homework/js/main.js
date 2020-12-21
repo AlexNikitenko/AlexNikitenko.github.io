@@ -30,7 +30,8 @@ document.addEventListener('keydown', (event) => {
 })
 
 buttonLeft.addEventListener('click', () => {
-    mainEl.classList.toggle('drive-forward');
+    mainEl.classList.add('drive-forward');
+    mainEl.classList.remove('drive-backward');
     if (mainEl.getElementsByClassName.animationPlayState === 'paused') {
         mainEl.getElementsByClassName.animationPlayState = 'running';
     } else {
@@ -40,7 +41,9 @@ buttonLeft.addEventListener('click', () => {
 
 document.addEventListener('keydown', (event) => {
     if (event.code == 'ArrowLeft') {
-        mainEl.classList.toggle('drive-forward');
+        mainEl.classList.add('drive-forward');
+        mainEl.classList.remove('drive-backward');
+
         if (mainEl.getElementsByClassName.animationPlayState === 'paused') {
             mainEl.getElementsByClassName.animationPlayState = 'running';
         } else {
@@ -50,7 +53,9 @@ document.addEventListener('keydown', (event) => {
 })
 
 buttonRight.addEventListener('click', () => {
-    mainEl.classList.toggle('drive-backward');
+    mainEl.classList.add('drive-backward');
+    mainEl.classList.remove('drive-forward');
+
     if (mainEl.getElementsByClassName.animationPlayState === 'paused') {
         mainEl.getElementsByClassName.animationPlayState = 'running';
     } else {
@@ -60,7 +65,9 @@ buttonRight.addEventListener('click', () => {
 
 document.addEventListener('keydown', (event) => {
     if (event.code == 'ArrowRight') {
-        mainEl.classList.toggle('drive-backward');
+        mainEl.classList.add('drive-backward');
+        mainEl.classList.remove('drive-forward');
+
         if (mainEl.getElementsByClassName.animationPlayState === 'paused') {
             mainEl.getElementsByClassName.animationPlayState = 'running';
         } else {
