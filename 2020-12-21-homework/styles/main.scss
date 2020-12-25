@@ -1,29 +1,17 @@
 .scene {
+    margin: 0 auto;
     position: relative;
     height: 676px;
-    border-bottom: 5px solid black;
+    width: 1320px;
+    border: 5px solid black;
 }
 
 .train {
     position: absolute;
-    width: 700px;
-    right: 0;
-}
-
-.drive-forward {
-    animation-name: drive-forward;
-    animation-duration: 5s;
-    animation-delay: 0;
-    animation-iteration-count: 1;
-    animation-play-state: running;
-}
-
-.drive-backward {
-    animation-name: drive-backward;
-    animation-duration: 5s;
-    animation-delay: 0;
-    animation-iteration-count: 1;
-    animation-play-state: running;
+    // width: 690px;
+    // height: 676px;
+    box-sizing: border-box;
+    // left: 0;
 }
 
 .container {
@@ -36,29 +24,45 @@
     height: 50px;
 }
 
-.light {
+.light-off {
     fill: blue;
 }
 
 .light-on {
     fill: yellow;
-    content: "light-on";
 }
 
-@keyframes drive-forward {
+@keyframes shift-forward {
+    0% {}
+    100% {
+        left: 630px;
+    }
+    ;
+}
+
+@keyframes shift-reverse {
     0% {
-        right: 0;
+        left: 630px;
     }
     100% {
-        right: 1320px;
+        left: 0;
     }
 }
 
-@keyframes drive-backward {
-    0% {
-        right: 1320px;
-    }
-    100% {
-        right: 0;
-    }
+.drive-forward {
+    animation: shift-forward 5s linear forwards paused;
+    // animation-name: drive-forward;
+    // animation-duration: 5s;
+    // animation-delay: 0;
+    // animation-iteration-count: 1;
+    // animation-play-state: paused;
+}
+
+.drive-reverse {
+    animation: shift-reverse 5s linear forwards paused;
+    // animation-name: drive-backward;
+    // animation-duration: 5s;
+    // animation-delay: 0;
+    // animation-iteration-count: 1;
+    // animation-play-state: paused;
 }
