@@ -19,81 +19,46 @@ const changeColor = () => {
     }
 };
 
+buttonLight.addEventListener('click', changeColor);
+
 const revFunc = () => {
     mainEl.style.left = getComputedStyle(mainEl).left;
-    mainEl.classList.remove('drive-forward');
-    mainEl.classList.add('drive-reverse');
+    mainEl.classList.toggle('drive-reverse');
+    mainEl.classList.toggle('drive-forward');
     mainEl.style.animationPlayState = 'running';
-
     let distance = parseInt(getComputedStyle(mainEl).left, 1);
     let time = `${distance / 315}s`;
     mainEl.style.animationDuration = time;
 
 };
 
-buttonLight.addEventListener('click', changeColor);
-
 buttonRight.addEventListener('click', () => {
-    // mainEl.style.left = 0;
+    if (mainEl.classList.contains('drive-forward')) {
+        if (mainEl.style.animationPlayState === 'paused' || getComputedStyle(mainEl).animationPlayState === 'paused') {
+            mainEl.style.animationPlayState = 'running';
 
-
-    if (mainEl.style.animationPlayState === 'paused' || getComputedStyle(mainEl).animationPlayState === 'paused') {
-        mainEl.style.animationPlayState = 'running';
-        // mainEl.style.left = getComputedStyle(mainEl).left
-        mainEl.classList.add('drive-forward');
-        mainEl.classList.remove('drive-reverse');
-
-    } else {
-        mainEl.style.animationPlayState = 'paused';
+        } else {
+            mainEl.style.animationPlayState = 'paused';
+        }
     }
-    let distance = 630 - parseInt(getComputedStyle(mainEl).left, 1);
-    let time = `${distance / 315}s`;
-    mainEl.style.animationDuration = time;
+    if (mainEl.classList.contains('drive-reverse')) {
+        revFunc();
+    }
 });
-
-// buttonLeft.addEventListener('click', () => {
-//     mainEl.style.left = getComputedStyle(mainEl).left;
-//     mainEl.classList.remove('drive-forward');
-//     mainEl.classList.add('drive-reverse');
-//     // mainEl.style.animationPlayState = 'running';
-//     clickCount = clickCount + 1;
-//     if (clickCount > 1) {
-//         mainEl.style.animationPlayState = 'paused';
-//         clickCount = 0;
-//     }
-
-//     let distance = parseInt(getComputedStyle(mainEl).left, 1);
-//     let time = `${distance / 315}s`;
-//     mainEl.style.animationDuration = time;
-
-// });
 
 buttonLeft.addEventListener('click', () => {
-
-    if (clickLeftCount >= 1) {
-        mainEl.style.animationPlayState = 'paused';
-        clickLeftCount = 0;
-
-    } else {
-        mainEl.style.left = getComputedStyle(mainEl).left;
-        mainEl.classList.remove('drive-forward');
-        mainEl.classList.add('drive-reverse');
-        mainEl.style.animationPlayState = 'running';
-        clickLeftCount = clickLeftCount + 1;
-        let distance = parseInt(getComputedStyle(mainEl).left, 1);
-        let time = `${distance / 315}s`;
-        mainEl.style.animationDuration = time;
+    if (mainEl.classList.contains('drive-forward')) {
+        revFunc();
     }
+    if (mainEl.classList.contains('drive-reverse')) {
+        if (mainEl.style.animationPlayState === 'paused' || getComputedStyle(mainEl).animationPlayState === 'paused') {
+            mainEl.style.animationPlayState = 'running';
 
-
-
+        } else {
+            mainEl.style.animationPlayState = 'paused';
+        }
+    }
 });
-
-
-// buttonLeft.addEventListener('click', revFunc);
-
-
-
 
 document.addEventListener('keydown', (event) => {
     switch (event.code) {
@@ -102,33 +67,30 @@ document.addEventListener('keydown', (event) => {
             changeColor();
             break;
         case 'ArrowLeft':
-            if (clickLeftCount >= 1) {
-                mainEl.style.animationPlayState = 'paused';
-                clickLeftCount = 0;
+            if (mainEl.classList.contains('drive-forward')) {
+                revFunc();
+            }
+            if (mainEl.classList.contains('drive-reverse')) {
+                if (mainEl.style.animationPlayState === 'paused' || getComputedStyle(mainEl).animationPlayState === 'paused') {
+                    mainEl.style.animationPlayState = 'running';
 
-            } else {
-                mainEl.style.left = getComputedStyle(mainEl).left;
-                mainEl.classList.remove('drive-forward');
-                mainEl.classList.add('drive-reverse');
-                mainEl.style.animationPlayState = 'running';
-                clickLeftCount = clickLeftCount + 1;
-                let distance = parseInt(getComputedStyle(mainEl).left, 1);
-                let time = `${distance / 315}s`;
-                mainEl.style.animationDuration = time;
+                } else {
+                    mainEl.style.animationPlayState = 'paused';
+                }
             }
             break;
         case 'ArrowRight':
-            if (mainEl.style.animationPlayState === 'paused' || getComputedStyle(mainEl).animationPlayState === 'paused') {
-                mainEl.style.animationPlayState = 'running';
-                mainEl.classList.add('drive-forward');
-                mainEl.classList.remove('drive-reverse');
+            if (mainEl.classList.contains('drive-forward')) {
+                if (mainEl.style.animationPlayState === 'paused' || getComputedStyle(mainEl).animationPlayState === 'paused') {
+                    mainEl.style.animationPlayState = 'running';
 
-            } else {
-                mainEl.style.animationPlayState = 'paused';
+                } else {
+                    mainEl.style.animationPlayState = 'paused';
+                }
             }
-            let distance = 630 - parseInt(getComputedStyle(mainEl).left, 1);
-            let time = `${distance / 315}s`;
-            mainEl.style.animationDuration = time;
+            if (mainEl.classList.contains('drive-reverse')) {
+                revFunc();
+            }
             break;
     }
 });
