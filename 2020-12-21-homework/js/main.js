@@ -102,17 +102,30 @@ document.addEventListener('keydown', (event) => {
             changeColor();
             break;
         case 'ArrowLeft':
-            revFunc();
+            if (clickLeftCount >= 1) {
+                mainEl.style.animationPlayState = 'paused';
+                clickLeftCount = 0;
+
+            } else {
+                mainEl.style.left = getComputedStyle(mainEl).left;
+                mainEl.classList.remove('drive-forward');
+                mainEl.classList.add('drive-reverse');
+                mainEl.style.animationPlayState = 'running';
+                clickLeftCount = clickLeftCount + 1;
+                let distance = parseInt(getComputedStyle(mainEl).left, 1);
+                let time = `${distance / 315}s`;
+                mainEl.style.animationDuration = time;
+            }
             break;
         case 'ArrowRight':
             if (mainEl.style.animationPlayState === 'paused' || getComputedStyle(mainEl).animationPlayState === 'paused') {
                 mainEl.style.animationPlayState = 'running';
+                mainEl.classList.add('drive-forward');
+                mainEl.classList.remove('drive-reverse');
 
             } else {
                 mainEl.style.animationPlayState = 'paused';
             }
-            mainEl.classList.add('drive-forward');
-            mainEl.classList.remove('drive-reverse');
             let distance = 630 - parseInt(getComputedStyle(mainEl).left, 1);
             let time = `${distance / 315}s`;
             mainEl.style.animationDuration = time;
