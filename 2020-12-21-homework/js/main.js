@@ -7,8 +7,6 @@ const buttonRight = document.querySelector('.btn-right');
 const buttonLight = document.querySelector('.btn-light');
 const trainLight = document.querySelector('.light-off');
 
-let clickLeftCount = 0;
-
 const changeColor = () => {
     trainLight.classList.toggle('light-off');
     trainLight.classList.toggle('light-on');
@@ -21,39 +19,39 @@ const changeColor = () => {
 
 buttonLight.addEventListener('click', changeColor);
 
-const revFunc = () => {
+const changeDirection = () => {
     mainEl.style.left = getComputedStyle(mainEl).left;
     mainEl.classList.toggle('drive-reverse');
     mainEl.classList.toggle('drive-forward');
     mainEl.style.animationPlayState = 'running';
-    let distance = parseInt(getComputedStyle(mainEl).left, 1);
-    let time = `${distance / 315}s`;
-    mainEl.style.animationDuration = time;
-
 };
 
 buttonRight.addEventListener('click', () => {
     if (mainEl.classList.contains('drive-forward')) {
         if (mainEl.style.animationPlayState === 'paused' || getComputedStyle(mainEl).animationPlayState === 'paused') {
             mainEl.style.animationPlayState = 'running';
-
+            let distance = 630 - parseInt(getComputedStyle(mainEl).left, 1);
+            let time = `${distance / 315}s`;
+            mainEl.style.animationDuration = time;
         } else {
             mainEl.style.animationPlayState = 'paused';
         }
     }
     if (mainEl.classList.contains('drive-reverse')) {
-        revFunc();
+        changeDirection();
     }
 });
 
 buttonLeft.addEventListener('click', () => {
     if (mainEl.classList.contains('drive-forward')) {
-        revFunc();
+        changeDirection();
     }
     if (mainEl.classList.contains('drive-reverse')) {
         if (mainEl.style.animationPlayState === 'paused' || getComputedStyle(mainEl).animationPlayState === 'paused') {
             mainEl.style.animationPlayState = 'running';
-
+            let distance = parseInt(getComputedStyle(mainEl).left, 1);
+            let time = `${distance / 315}s`;
+            mainEl.style.animationDuration = time;
         } else {
             mainEl.style.animationPlayState = 'paused';
         }
@@ -68,12 +66,14 @@ document.addEventListener('keydown', (event) => {
             break;
         case 'ArrowLeft':
             if (mainEl.classList.contains('drive-forward')) {
-                revFunc();
+                changeDirection();
             }
             if (mainEl.classList.contains('drive-reverse')) {
                 if (mainEl.style.animationPlayState === 'paused' || getComputedStyle(mainEl).animationPlayState === 'paused') {
                     mainEl.style.animationPlayState = 'running';
-
+                    let distance = parseInt(getComputedStyle(mainEl).left, 1);
+                    let time = `${distance / 315}s`;
+                    mainEl.style.animationDuration = time;
                 } else {
                     mainEl.style.animationPlayState = 'paused';
                 }
@@ -83,13 +83,15 @@ document.addEventListener('keydown', (event) => {
             if (mainEl.classList.contains('drive-forward')) {
                 if (mainEl.style.animationPlayState === 'paused' || getComputedStyle(mainEl).animationPlayState === 'paused') {
                     mainEl.style.animationPlayState = 'running';
-
+                    let distance = 630 - parseInt(getComputedStyle(mainEl).left, 1);
+                    let time = `${distance / 315}s`;
+                    mainEl.style.animationDuration = time;
                 } else {
                     mainEl.style.animationPlayState = 'paused';
                 }
             }
             if (mainEl.classList.contains('drive-reverse')) {
-                revFunc();
+                changeDirection();
             }
             break;
     }
