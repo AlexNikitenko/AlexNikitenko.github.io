@@ -8,10 +8,10 @@
 
 .train {
     position: absolute;
-    // width: 690px;
-    // height: 676px;
+    width: 690px;
+    height: 676px;
     box-sizing: border-box;
-    // left: 0;
+    left: 0;
 }
 
 .container {
@@ -40,28 +40,16 @@
 }
 
 @keyframes shift-reverse {
-    0% {
-        left: 630px;
-    }
+    0% {}
     100% {
-        left: 0;
+        left: 0px;
     }
 }
 
 .drive-forward {
-    animation: shift-forward 5s linear forwards paused;
-    // animation-name: drive-forward;
-    // animation-duration: 5s;
-    // animation-delay: 0;
-    // animation-iteration-count: 1;
-    // animation-play-state: paused;
+    animation: shift-forward 2s linear forwards paused;
 }
 
 .drive-reverse {
-    animation: shift-reverse 5s linear forwards paused;
-    // animation-name: drive-backward;
-    // animation-duration: 5s;
-    // animation-delay: 0;
-    // animation-iteration-count: 1;
-    // animation-play-state: paused;
+    animation: shift-reverse 2s linear forwards paused;
 }

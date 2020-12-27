@@ -8,8 +8,11 @@
 
 .train {
   position: absolute;
+  width: 690px;
+  height: 676px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  left: 0;
 }
 
 .container {
@@ -48,29 +51,27 @@
 
 @-webkit-keyframes shift-reverse {
   0% {
-    left: 630px;
   }
   100% {
-    left: 0;
+    left: 0px;
   }
 }
 
 @keyframes shift-reverse {
   0% {
-    left: 630px;
   }
   100% {
-    left: 0;
+    left: 0px;
   }
 }
 
 .drive-forward {
-  -webkit-animation: shift-forward 5s linear forwards paused;
-          animation: shift-forward 5s linear forwards paused;
+  -webkit-animation: shift-forward 2s linear forwards paused;
+          animation: shift-forward 2s linear forwards paused;
 }
 
 .drive-reverse {
-  -webkit-animation: shift-reverse 5s linear forwards paused;
-          animation: shift-reverse 5s linear forwards paused;
+  -webkit-animation: shift-reverse 2s linear forwards paused;
+          animation: shift-reverse 2s linear forwards paused;
 }
 /*# sourceMappingURL=main.css.map */
