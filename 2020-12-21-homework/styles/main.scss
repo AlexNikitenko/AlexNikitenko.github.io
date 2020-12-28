@@ -1,8 +1,12 @@
-.scene {
+.main {
+    width: 600px;
     margin: 0 auto;
+}
+
+.scene {
     position: relative;
     height: 200px;
-    width: 600px;
+    // width: 600px;
     border: 5px solid black;
 }
 
@@ -17,7 +21,7 @@
 
 .container {
     margin: 20px auto;
-    width: 400px;
+    width: 320px;
 }
 
 .btn {
@@ -36,7 +40,7 @@
 @keyframes shift-forward {
     0% {}
     100% {
-        left: 485px;
+        left: 475px;
     }
 }
 
