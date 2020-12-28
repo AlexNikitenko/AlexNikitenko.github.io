@@ -19,10 +19,24 @@ const changeColor = () => {
 
 buttonLight.addEventListener('click', changeColor);
 
-const changeDirection = () => {
+// const changeDirection = () => {
+//     mainEl.style.left = getComputedStyle(mainEl).left;
+//     mainEl.classList.toggle('drive-reverse');
+//     mainEl.classList.toggle('drive-forward');
+// };
+
+const revFunc = () => {
     mainEl.style.left = getComputedStyle(mainEl).left;
-    mainEl.classList.toggle('drive-reverse');
-    mainEl.classList.toggle('drive-forward');
+    mainEl.classList.add('drive-reverse');
+    mainEl.classList.remove('drive-forward');
+    mainEl.style.animationPlayState = 'running';
+};
+
+const forwFunc = () => {
+    mainEl.style.left = getComputedStyle(mainEl).left;
+    mainEl.classList.remove('drive-reverse');
+    mainEl.classList.add('drive-forward');
+    mainEl.style.animationPlayState = 'running';
 };
 
 buttonRight.addEventListener('click', () => {
@@ -36,13 +50,13 @@ buttonRight.addEventListener('click', () => {
             mainEl.style.animationPlayState = 'paused';
         }
     } else if (mainEl.classList.contains('drive-reverse')) {
-        changeDirection();
+        forwFunc();
     }
 });
 
 buttonLeft.addEventListener('click', () => {
     if (mainEl.classList.contains('drive-forward')) {
-        changeDirection();
+        revFunc();
     } else if (mainEl.classList.contains('drive-reverse')) {
         if (mainEl.style.animationPlayState === 'paused' || getComputedStyle(mainEl).animationPlayState === 'paused') {
             mainEl.style.animationPlayState = 'running';
@@ -63,7 +77,7 @@ document.addEventListener('keydown', (event) => {
             break;
         case 'ArrowLeft':
             if (mainEl.classList.contains('drive-forward')) {
-                changeDirection();
+                revFunc();
             } else if (mainEl.classList.contains('drive-reverse')) {
                 if (mainEl.style.animationPlayState === 'paused' || getComputedStyle(mainEl).animationPlayState === 'paused') {
                     mainEl.style.animationPlayState = 'running';
@@ -86,7 +100,7 @@ document.addEventListener('keydown', (event) => {
                     mainEl.style.animationPlayState = 'paused';
                 }
             } else if (mainEl.classList.contains('drive-reverse')) {
-                changeDirection();
+                forwFunc();
             }
             break;
     }
