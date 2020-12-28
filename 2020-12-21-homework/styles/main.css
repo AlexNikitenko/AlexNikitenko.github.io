@@ -1,27 +1,29 @@
 .scene {
   margin: 0 auto;
   position: relative;
-  height: 676px;
+  height: 200px;
+  width: 600px;
   border: 5px solid black;
 }
 
 .train {
   position: absolute;
-  width: 690px;
-  height: 676px;
+  width: 115px;
+  height: 105px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   left: 0;
+  top: 95px;
 }
 
 .container {
-  margin: 50px auto;
-  width: 650px;
+  margin: 20px auto;
+  width: 400px;
 }
 
 .btn {
-  width: 200px;
-  height: 50px;
+  width: 100px;
+  height: 30px;
 }
 
 .light-off {
@@ -36,7 +38,7 @@
   0% {
   }
   100% {
-    left: 630px;
+    left: 485px;
   }
 }
 
@@ -44,7 +46,7 @@
   0% {
   }
   100% {
-    left: 630px;
+    left: 485px;
   }
 }
 

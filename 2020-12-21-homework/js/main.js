@@ -29,8 +29,8 @@ buttonRight.addEventListener('click', () => {
     if (mainEl.classList.contains('drive-forward')) {
         if (mainEl.style.animationPlayState === 'paused' || getComputedStyle(mainEl).animationPlayState === 'paused') {
             mainEl.style.animationPlayState = 'running';
-            let distance = 630 - parseInt(getComputedStyle(mainEl).left, 1);
-            let time = `${distance / 315}s`;
+            let distance = 485 - parseInt(getComputedStyle(mainEl).left, 1);
+            let time = `${distance*2/485}s`;
             mainEl.style.animationDuration = time;
         } else {
             mainEl.style.animationPlayState = 'paused';
@@ -47,7 +47,7 @@ buttonLeft.addEventListener('click', () => {
         if (mainEl.style.animationPlayState === 'paused' || getComputedStyle(mainEl).animationPlayState === 'paused') {
             mainEl.style.animationPlayState = 'running';
             let distance = parseInt(getComputedStyle(mainEl).left, 1);
-            let time = `${distance / 315}s`;
+            let time = `${distance*2/485}s`;
             mainEl.style.animationDuration = time;
         } else {
             mainEl.style.animationPlayState = 'paused';
@@ -68,7 +68,7 @@ document.addEventListener('keydown', (event) => {
                 if (mainEl.style.animationPlayState === 'paused' || getComputedStyle(mainEl).animationPlayState === 'paused') {
                     mainEl.style.animationPlayState = 'running';
                     let distance = parseInt(getComputedStyle(mainEl).left, 1);
-                    let time = `${distance / 315}s`;
+                    let time = `${distance*2/485}s`;
                     mainEl.style.animationDuration = time;
                 } else {
                     mainEl.style.animationPlayState = 'paused';
@@ -79,8 +79,8 @@ document.addEventListener('keydown', (event) => {
             if (mainEl.classList.contains('drive-forward')) {
                 if (mainEl.style.animationPlayState === 'paused' || getComputedStyle(mainEl).animationPlayState === 'paused') {
                     mainEl.style.animationPlayState = 'running';
-                    let distance = 630 - parseInt(getComputedStyle(mainEl).left, 1);
-                    let time = `${distance / 315}s`;
+                    let distance = 485 - parseInt(getComputedStyle(mainEl).left, 1);
+                    let time = `${distance*2/485}s`;
                     mainEl.style.animationDuration = time;
                 } else {
                     mainEl.style.animationPlayState = 'paused';
