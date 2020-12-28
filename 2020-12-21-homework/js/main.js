@@ -23,7 +23,6 @@ const changeDirection = () => {
     mainEl.style.left = getComputedStyle(mainEl).left;
     mainEl.classList.toggle('drive-reverse');
     mainEl.classList.toggle('drive-forward');
-    mainEl.style.animationPlayState = 'running';
 };
 
 buttonRight.addEventListener('click', () => {
