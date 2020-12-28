@@ -36,8 +36,7 @@ buttonRight.addEventListener('click', () => {
         } else {
             mainEl.style.animationPlayState = 'paused';
         }
-    }
-    if (mainEl.classList.contains('drive-reverse')) {
+    } else if (mainEl.classList.contains('drive-reverse')) {
         changeDirection();
     }
 });
@@ -45,8 +44,7 @@ buttonRight.addEventListener('click', () => {
 buttonLeft.addEventListener('click', () => {
     if (mainEl.classList.contains('drive-forward')) {
         changeDirection();
-    }
-    if (mainEl.classList.contains('drive-reverse')) {
+    } else if (mainEl.classList.contains('drive-reverse')) {
         if (mainEl.style.animationPlayState === 'paused' || getComputedStyle(mainEl).animationPlayState === 'paused') {
             mainEl.style.animationPlayState = 'running';
             let distance = parseInt(getComputedStyle(mainEl).left, 1);
@@ -67,8 +65,7 @@ document.addEventListener('keydown', (event) => {
         case 'ArrowLeft':
             if (mainEl.classList.contains('drive-forward')) {
                 changeDirection();
-            }
-            if (mainEl.classList.contains('drive-reverse')) {
+            } else if (mainEl.classList.contains('drive-reverse')) {
                 if (mainEl.style.animationPlayState === 'paused' || getComputedStyle(mainEl).animationPlayState === 'paused') {
                     mainEl.style.animationPlayState = 'running';
                     let distance = parseInt(getComputedStyle(mainEl).left, 1);
@@ -89,8 +86,7 @@ document.addEventListener('keydown', (event) => {
                 } else {
                     mainEl.style.animationPlayState = 'paused';
                 }
-            }
-            if (mainEl.classList.contains('drive-reverse')) {
+            } else if (mainEl.classList.contains('drive-reverse')) {
                 changeDirection();
             }
             break;
