@@ -19,17 +19,15 @@ const changeColor = () => {
 
 buttonLight.addEventListener('click', changeColor);
 
-// const changeDirection = () => {
-//     mainEl.style.left = getComputedStyle(mainEl).left;
-//     mainEl.classList.toggle('drive-reverse');
-//     mainEl.classList.toggle('drive-forward');
-// };
-
 const revFunc = () => {
     mainEl.style.left = getComputedStyle(mainEl).left;
     mainEl.classList.add('drive-reverse');
     mainEl.classList.remove('drive-forward');
     mainEl.style.animationPlayState = 'running';
+    let distance = parseInt(getComputedStyle(mainEl).left, 10);
+    let time = `${distance*2/475}s`;
+    mainEl.style.animationDuration = time;
+    console.log(time);
 };
 
 const forwFunc = () => {
@@ -37,15 +35,16 @@ const forwFunc = () => {
     mainEl.classList.remove('drive-reverse');
     mainEl.classList.add('drive-forward');
     mainEl.style.animationPlayState = 'running';
+    let distance = 475 - parseInt(getComputedStyle(mainEl).left, 10);
+    let time = `${distance*2/475}s`;
+    mainEl.style.animationDuration = time;
+    console.log(time);
 };
 
 buttonRight.addEventListener('click', () => {
     if (mainEl.classList.contains('drive-forward')) {
         if (mainEl.style.animationPlayState === 'paused' || getComputedStyle(mainEl).animationPlayState === 'paused') {
             mainEl.style.animationPlayState = 'running';
-            let distance = 475 - parseInt(getComputedStyle(mainEl).left, 1);
-            let time = `${distance*2/475}s`;
-            mainEl.style.animationDuration = time;
         } else {
             mainEl.style.animationPlayState = 'paused';
         }
@@ -60,9 +59,6 @@ buttonLeft.addEventListener('click', () => {
     } else if (mainEl.classList.contains('drive-reverse')) {
         if (mainEl.style.animationPlayState === 'paused' || getComputedStyle(mainEl).animationPlayState === 'paused') {
             mainEl.style.animationPlayState = 'running';
-            let distance = parseInt(getComputedStyle(mainEl).left, 1);
-            let time = `${distance*2/475}s`;
-            mainEl.style.animationDuration = time;
         } else {
             mainEl.style.animationPlayState = 'paused';
         }
@@ -81,9 +77,6 @@ document.addEventListener('keydown', (event) => {
             } else if (mainEl.classList.contains('drive-reverse')) {
                 if (mainEl.style.animationPlayState === 'paused' || getComputedStyle(mainEl).animationPlayState === 'paused') {
                     mainEl.style.animationPlayState = 'running';
-                    let distance = parseInt(getComputedStyle(mainEl).left, 1);
-                    let time = `${distance*2/475}s`;
-                    mainEl.style.animationDuration = time;
                 } else {
                     mainEl.style.animationPlayState = 'paused';
                 }
@@ -93,9 +86,6 @@ document.addEventListener('keydown', (event) => {
             if (mainEl.classList.contains('drive-forward')) {
                 if (mainEl.style.animationPlayState === 'paused' || getComputedStyle(mainEl).animationPlayState === 'paused') {
                     mainEl.style.animationPlayState = 'running';
-                    let distance = 475 - parseInt(getComputedStyle(mainEl).left, 1);
-                    let time = `${distance*2/475}s`;
-                    mainEl.style.animationDuration = time;
                 } else {
                     mainEl.style.animationPlayState = 'paused';
                 }
