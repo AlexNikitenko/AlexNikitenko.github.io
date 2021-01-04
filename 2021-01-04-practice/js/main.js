@@ -19,7 +19,8 @@ yellowBtn.addEventListener('click', () => {
 })
 
 greenBtn.addEventListener('click', () => {
-    greenLight.classList.add('green');
-    yellowLight.classList.remove('yellow');
-    redLight.classList.remove('red');
-})
+        greenLight.classList.add('green');
+        yellowLight.classList.remove('yellow');
+        redLight.classList.remove('red');
+    })
+    //
