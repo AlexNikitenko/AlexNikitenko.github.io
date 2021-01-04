@@ -1,0 +1,69 @@
+.main {
+  width: 100px;
+  height: 300px;
+  border: 1px solid black;
+  margin: 50px auto;
+  border-radius: 45px;
+}
+
+.light {
+  width: 60px;
+  height: 60px;
+  margin: 30px auto;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+.control {
+  width: 300px;
+  height: 80px;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 50px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding-top: 13px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+}
+
+.btn-red {
+  background-color: red;
+  border: none;
+}
+
+.btn-green {
+  background-color: green;
+  border: none;
+}
+
+.btn-yellow {
+  background-color: yellow;
+  border: none;
+}
+
+.red {
+  background-color: red;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.green {
+  background-color: green;
+}
+/*# sourceMappingURL=main.css.map */

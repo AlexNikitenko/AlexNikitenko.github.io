@@ -1,0 +1,63 @@
+.main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 5px;
+    width: 300px;
+    margin: 50px auto;
+    box-sizing: border-box;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.cell {
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.status {
+    width: 200px;
+    margin: 0 auto;
+}
+
+.controller-box {
+    width: 200px;
+    margin: 0 auto;
+    padding: 5px;
+    display: grid;
+    // grid-template-columns: 1fr 1fr 1fr;
+    // grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: ". bu ." "bl . br" ". bd .";
+    grid-gap: 5px;
+}
+
+button {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+}
+
+.btn-up {
+    grid-area: bu;
+}
+
+.btn-left {
+    grid-area: bl;
+}
+
+.btn-right {
+    grid-area: br;
+}
+
+.btn-down {
+    grid-area: bd;
+}

@@ -1,0 +1,75 @@
+.main {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 5px;
+  width: 300px;
+  margin: 50px auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.cell {
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.status {
+  width: 200px;
+  margin: 0 auto;
+}
+
+.controller-box {
+  width: 200px;
+  margin: 0 auto;
+  padding: 5px;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: ". bu ." "bl . br" ". bd .";
+  grid-gap: 5px;
+}
+
+button {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+}
+
+.btn-up {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: bu;
+}
+
+.btn-left {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: bl;
+}
+
+.btn-right {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: br;
+}
+
+.btn-down {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: bd;
+}
+/*# sourceMappingURL=main.css.map */
