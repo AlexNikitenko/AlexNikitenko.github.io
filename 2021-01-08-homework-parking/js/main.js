@@ -107,6 +107,7 @@ const getBooking = (array) => {
                     modalBooking.classList.remove('modal-show');
                     overlayField.classList.remove('modal-show');
                     modalFree.classList.remove('modal-show');
+                    modalOffer.classList.remove('modal-show');
                 })
             }
 
