@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="./styles/main.css ">
+</head>
+
+
+<body>
+    <div class="current-time"></div>
+    <div class="main">
+        <div class="parking"></div>
+    </div>
+    <div class="overlay"></div>
+    <div class="modal modal-booking">Book your parking space:
+    </div>
+    <div class="modal modal-free">Do you want to vacate the parking space?
+        <span>Your parking time is:</span>
+        <div class="timer"></div>
+        <div class="wrapper">
+            <button type="button" class="btn btn-stop">Yes</button>
+            <button type="button" class="btn btn-cancel">No</button>
+        </div>
+    </div>
+    <div class="modal modal-offer">
+        We recommend you do not book parking space due to the small number of free places
+    </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
+</body>
+
+</html>
