@@ -7,18 +7,21 @@
   text-align: center;
 }
 
+.free-spaces,
+.occupied-spaces {
+  width: 200px;
+  border: 1px solid black;
+  margin: 10px auto;
+  text-align: center;
+}
+
 .main {
-  width: 700px;
-  min-height: 600px;
+  width: 568px;
+  padding-left: 2px;
+  min-height: 150px;
   border: 1px solid black;
   border-bottom: none;
   margin: 30px auto;
-}
-
-.parking {
-  width: 650px;
-  min-height: 100px;
-  margin-left: 70px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -30,9 +33,11 @@
       flex-wrap: wrap;
 }
 
-.parking-space {
-  width: 60px;
+.test {
+  width: 80px;
   height: 100px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   border: 1px solid black;
   margin-right: 1px;
   margin-bottom: 100px;
@@ -60,7 +65,8 @@
   display: none;
 }
 
-.modal {
+.car-in,
+.car-out {
   background-color: cornflowerblue;
   width: 530px;
   height: 300px;
@@ -91,7 +97,7 @@
   display: flex;
 }
 
-.input-time {
+.from-time {
   width: 200px;
   margin: 0 auto;
 }
@@ -105,6 +111,7 @@
 }
 
 .wrapper {
+  width: 250px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -112,18 +119,6 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-}
-
-.timer {
-  width: 200px;
-  height: 70px;
-  border: 1px solid black;
   margin: 0 auto;
-  background-color: white;
-  text-align: center;
-  padding-top: 11px;
-  font-size: 25px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
 }
 /*# sourceMappingURL=main.css.map */

@@ -12,6 +12,8 @@ const overlayField = document.querySelector('.overlay');
 const stopBtn = document.querySelector('.btn-stop');
 const cancelBtn = document.querySelector('.btn-cancel');
 const mainTimer = document.querySelector('.timer');
+const countFreeSpaces = document.querySelector('.free-spaces');
+const countOcupiedSpaces = document.querySelector('.occupied-spaces');
 
 const PLACES = 40;
 
@@ -34,9 +36,9 @@ const genArr = () => {
     return newArr;
 };
 
-console.log(genArr(PLACES));
+// console.log(genArr(PLACES));
 
-let arr = genArr(PLACES);
+// let arr = genArr(PLACES);
 
 // 2) Функция подсчета количества занятых и свободных паркомест
 
@@ -45,7 +47,9 @@ const countFreePlaces = (array) => {
     for (let i = 0; i < array.length; i++) {
         count += (array[i].occupied === "Free") ? 1 : 0;
     }
-    return count;
+    countFreeSpaces.innerHTML = `Free Spaces: ${count}`;
+    countOcupiedSpaces.innerHTML = `Booked Spaces = ${array.length-count}`;
+
 };
 
 console.log('Free Places: ', countFreePlaces(arr));
@@ -60,7 +64,7 @@ const runTimer = (array) => {
     }, 100)
 }
 
-runTimer(arr);
+// runTimer(arr);
 
 // 5) При нажатии на паркоместо, если оно пустое, появляется модальное окно 
 // с полем input, в нем текущее время, которое можно исправить, это время 
@@ -139,7 +143,7 @@ const getBooking = (array) => {
     return array;
 };
 
-getBooking(arr);
+// getBooking(arr);
 console.log(getBooking(arr))
 
 // 6) Если нажать на занятой парковке, то появляется модальное окно 
@@ -169,7 +173,7 @@ const getParkingTime = (array) => { //Таймер для подсчета вр�
     })
 };
 
-getParkingTime(arr);
+// getParkingTime(arr);
 
 
 
