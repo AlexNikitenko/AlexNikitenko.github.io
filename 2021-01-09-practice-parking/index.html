@@ -11,9 +11,11 @@
 
 
 <body>
-    <div class="current-time">11:11</div>
-    <div class="free-spaces">Free Spaces: 9</div>
-    <div class="occupied-spaces">Booked Spaces: 2</div>
+    <div class="status">
+        <div class="current-time">Current Time: 11:11</div>
+        <div class="free-spaces">Free Spaces: 9</div>
+        <div class="occupied-spaces">Booked Spaces: 2</div>
+    </div>
     <div class="main">
         <div class="test free-parking" id="#1">
             <span id="#pn1">id: 1</span><br>
@@ -72,12 +74,12 @@
         </div>
     </div>
     <div class="overlay"></div>
-    <div class="car-in">
+    <div class="modal car-in">
         Book your parking space:
         <input type="time" class="from-time" value="11:11:11">
         <button type="button" class="btn btn-ok">Ok</button>
     </div>
-    <div class="car-out">
+    <div class="modal car-out">
         <div class="message">Do you want to vacate the parking space?</div>
         <div class="wrapper">
             <button type="button" class="btn btn-yes">YES</button>
