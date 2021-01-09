@@ -91,7 +91,7 @@
           justify-content: space-between;
   text-align: center;
   position: fixed;
-  top: calc(50%-100px);
+  top: calc(50% - 100px);
   left: calc(50% - 200px);
   z-index: 3;
   -webkit-box-shadow: 0 0 20px 0 #000000;
