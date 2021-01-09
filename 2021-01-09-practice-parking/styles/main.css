@@ -129,4 +129,34 @@
           flex-direction: row;
   margin: 0 auto;
 }
+
+.modal-close {
+  position: absolute;
+  top: 9px;
+  right: 28px;
+  width: 21px;
+  height: 21px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.modal-close::before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.modal-close::before,
+.modal-close::after {
+  content: "";
+  position: absolute;
+  width: 27px;
+  height: 3px;
+  background-color: #ee3643;
+}
+
+.modal-close::after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
 /*# sourceMappingURL=main.css.map */
