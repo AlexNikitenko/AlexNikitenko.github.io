@@ -1,46 +1,40 @@
-.status {
+.info-board {
     background-color: bisque;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 120px;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 1.2em;
     margin-bottom: 20px;
 }
 
-.current-time {
-    width: 200px;
-    border: 1px solid black;
-    margin: 10px auto;
-    text-align: center;
-}
-
-.free-spaces,
-.occupied-spaces {
-    width: 200px;
-    border: 1px solid black;
-    margin: 10px auto;
-    text-align: center;
-}
-
+// .current-time {
+//     width: 200px;
+//     height: 50px;
+//     border: 1px solid black;
+//     margin: 10px auto;
+//     text-align: center;
+//     box-sizing: border-box;
+// }
 .main {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     padding-left: 5px;
+    height: calc(100% - 1.2em);
 }
 
-.test {
-    width: 100px;
-    height: 120px;
+.parking-space {
+    width: 80px;
+    height: 100px;
     box-sizing: border-box;
     border: 1px solid black;
     margin-right: 1px;
-    margin-bottom: 100px;
+    margin-bottom: 5px;
     text-align: center;
 }
 
 .free-parking {
-    background-color: greenyellow;
+    background-color: #e3fde4;
 }
 
 .booked-parking {
@@ -127,4 +121,9 @@
 
 .modal-close::after {
     transform: rotate(-45deg);
+}
+
+.modal-close:active,
+.modal-close:focus {
+    outline: none;
 }
