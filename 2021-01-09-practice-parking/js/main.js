@@ -16,7 +16,7 @@ const freeSpacesEl = document.querySelector('.free-spaces');
 const occupiedSpacesEl = document.querySelector('.occupied-spaces');
 const messageEl = document.querySelector('.message');
 
-const PLACES = 33;
+const PLACES = 5;
 let timerID;
 const arrPlaces = [];
 
