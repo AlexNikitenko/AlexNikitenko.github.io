@@ -25,6 +25,7 @@
 const arrEls = document.querySelectorAll('.arr');
 const fieldEl = document.querySelector('.field');
 const shuffledCardsEl = document.querySelector('.shuffled-cards');
+const leftCardsEl = document.querySelector('.cards-left');
 
 const typeLeft = 10;
 const arrCardTypes = ['corner', 'imprasse', 'stick'];
@@ -106,6 +107,10 @@ const renderDeck = () => {
 };
 renderDeck();
 
+const leftCards = () => {
+    return leftCardsEl.innerHTML = `Cards Left: ${shuffledCardDeck.length}`;
+}
+
 fieldEl.addEventListener('click', (ev) => {
     if (ev.target.id !== '') {
         let item = Number(ev.target.id);
@@ -118,6 +123,7 @@ fieldEl.addEventListener('click', (ev) => {
             shuffledCardDeck.splice(index, 1);
             console.log(shuffledCardDeck);
             renderDeck();
+            leftCards();
         }
     }
 });
