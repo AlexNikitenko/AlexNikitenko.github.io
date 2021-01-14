@@ -16,7 +16,7 @@ const freeSpacesEl = document.querySelector('.free-spaces');
 const occupiedSpacesEl = document.querySelector('.occupied-spaces');
 const messageEl = document.querySelector('.message');
 
-const PLACES = 10;
+const PLACES = 33;
 let timerID;
 const arrPlaces = [];
 
@@ -77,7 +77,6 @@ const runTimer = () => {
 
     timerID = setInterval(() => {
         let currTime = moment();
-        currTime.add(100, 'ms');
         currTimeEl.innerHTML = currTime.format('DD-MM-YY HH:mm:ss');
     }, 100)
 }
@@ -121,10 +120,11 @@ mainEl.addEventListener('click', (ev) => {
             inpFromTimeEl.addEventListener('input', (evt) => {
                 let timeVal = evt.target.value;
                 let startTime = '09:00';
-                let endTime = '19:00';
+                let endTime = '18:00';
                 let timeFormat = "HH:mm";
 
-                if (moment(timeVal, timeFormat).isBetween(moment(startTime, timeFormat), moment(endTime, timeFormat)) && (tempFreePlaces <= (PLACES * 2 / 10))) {
+                if (moment(timeVal, timeFormat).isBetween(moment(startTime, timeFormat), moment(endTime, timeFormat)) &&
+                    (tempFreePlaces <= (PLACES * 2 / 10))) {
                     messageEl.innerHTML = 'We recommend not to occupy a parking space due to the small number of free spaces';
                 } else {
                     messageEl.innerHTML = 'Book your parking space:';
@@ -137,6 +137,7 @@ mainEl.addEventListener('click', (ev) => {
                 arrPlaces[i].occupied = true;
                 removeModalShow();
                 renderParkPlaces();
+                refreshInfoBoard();
                 btnOkEl.removeEventListener('click', clickBtnOk);
             }
             btnOkEl.addEventListener('click', clickBtnOk);
