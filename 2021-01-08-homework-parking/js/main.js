@@ -112,27 +112,26 @@ mainEl.addEventListener('click', (ev) => {
             overlayEl.classList.add('modal-show');
             inpFromTimeEl.value = moment().format('HH:mm');
 
-            let startTime = '09:00';
-            let endTime = '18:00';
-            let timeFormat = "HH:mm";
-            let inputTime = inpFromTimeEl.value;
-            let timeVal;
-            inpFromTimeEl.addEventListener('input', (evt) => {
-                timeVal = evt.target.value;
-                if (moment(timeVal, timeFormat).isBetween(moment(startTime, timeFormat), moment(endTime, timeFormat)) &&
+            const checkOccuPlaces = (value) => {
+                let startTime = '09:00';
+                let endTime = '18:00';
+                let timeFormat = "HH:mm";
+                if (moment(value, timeFormat).isBetween(moment(startTime, timeFormat), moment(endTime, timeFormat)) &&
                     (tempFreePlaces <= (PLACES * 2 / 10))) {
                     messageEl.innerHTML = 'We recommend not to occupy a parking space due to the small number of free spaces';
                 } else {
                     messageEl.innerHTML = 'Book your parking space:';
                 };
-            });
-
-            if (moment(inputTime, timeFormat).isBetween(moment(startTime, timeFormat), moment(endTime, timeFormat)) &&
-                (tempFreePlaces <= (PLACES * 2 / 10))) {
-                messageEl.innerHTML = 'We recommend not to occupy a parking space due to the small number of free spaces';
-            } else {
-                messageEl.innerHTML = 'Book your parking space:';
             };
+
+            let inputTime = inpFromTimeEl.value;
+            checkOccuPlaces(inputTime);
+
+            let timeVal;
+            inpFromTimeEl.addEventListener('input', (evt) => {
+                timeVal = evt.target.value;
+                checkOccuPlaces(timeVal);
+            });
 
             const clickBtnOk = () => {
 
