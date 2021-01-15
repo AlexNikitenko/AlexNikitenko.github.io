@@ -11,23 +11,27 @@
 
 
 <body>
-    <div class="current-time"></div>
-    <div class="main">
-        <div class="parking"></div>
+    <div class="info-board">
+        <div class="current-time"></div>
+        <div class="free-spaces">Free Spaces: 9</div>
+        <div class="occupied-spaces">Booked Spaces: 2</div>
     </div>
+    <div class="main"></div>
     <div class="overlay"></div>
-    <div class="modal modal-booking">Book your parking space:
+    <div class="modal car-in">
+        <div class="message">Book your parking space:</div>
+        <input type="time" class="from-time" value="11:11:11">
+        <button type="button" class="btn btn-ok">Ok</button>
+        <button class="modal-close" type="button"></button>
     </div>
-    <div class="modal modal-free">Do you want to vacate the parking space?
-        <span>Your parking time is:</span>
-        <div class="timer"></div>
+    <div class="modal car-out">
+        Do you want to vacate the parking space?
         <div class="wrapper">
-            <button type="button" class="btn btn-stop">Yes</button>
-            <button type="button" class="btn btn-cancel">No</button>
+            <button type="button" class="btn btn-yes">YES</button>
+            <button type="button" class="btn btn-no">NO</button>
         </div>
-    </div>
-    <div class="modal modal-offer">
-        We recommend you do not book parking space due to the small number of free places
+        <div class="occu-time">Your parking time is: 1 min</div>
+        <button class="modal-close" type="button"></button>
     </div>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script type="text/javascript" src="./js/main.js"></script>

@@ -1,24 +1,19 @@
-.current-time {
-  width: 200px;
-  height: 50px;
-  border: 1px solid black;
-  margin: 10px auto;
-  font-size: 45px;
-  text-align: center;
+.info-board {
+  background-color: bisque;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 1.2em;
+  margin-bottom: 20px;
 }
 
 .main {
-  width: 700px;
-  min-height: 600px;
-  border: 1px solid black;
-  border-bottom: none;
-  margin: 30px auto;
-}
-
-.parking {
-  width: 650px;
-  min-height: 100px;
-  margin-left: 70px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -28,31 +23,30 @@
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  padding-left: 5px;
+  height: calc(100% - 1.2em);
 }
 
 .parking-space {
-  width: 60px;
+  width: 80px;
   height: 100px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   border: 1px solid black;
   margin-right: 1px;
-  margin-bottom: 100px;
+  margin-bottom: 5px;
   text-align: center;
 }
 
 .free-parking {
-  background-color: greenyellow;
-}
-
-.booked-parking {
-  background-color: #681414;
-  color: white;
+  background-color: #e3fde4;
 }
 
 .overlay {
   background-color: gray;
   opacity: 0.9;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   position: fixed;
   left: 0;
   top: 0;
@@ -62,23 +56,23 @@
 
 .modal {
   background-color: cornflowerblue;
-  width: 530px;
-  height: 300px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  width: 400px;
+  height: 200px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 30px 0;
+  padding: 35px 0;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   text-align: center;
   position: fixed;
-  top: 100px;
-  left: 32%;
+  top: calc(50% - 100px);
+  left: calc(50% - 200px);
   z-index: 3;
   -webkit-box-shadow: 0 0 20px 0 #000000;
           box-shadow: 0 0 20px 0 #000000;
@@ -91,7 +85,7 @@
   display: flex;
 }
 
-.input-time {
+.from-time {
   width: 200px;
   margin: 0 auto;
 }
@@ -105,6 +99,7 @@
 }
 
 .wrapper {
+  width: 250px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -112,18 +107,41 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  margin: 0 auto;
 }
 
-.timer {
-  width: 200px;
-  height: 70px;
-  border: 1px solid black;
-  margin: 0 auto;
-  background-color: white;
-  text-align: center;
-  padding-top: 11px;
-  font-size: 25px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+.modal-close {
+  position: absolute;
+  top: 9px;
+  right: 28px;
+  width: 21px;
+  height: 21px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.modal-close::before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.modal-close::before,
+.modal-close::after {
+  content: "";
+  position: absolute;
+  width: 27px;
+  height: 3px;
+  background-color: #ee3643;
+}
+
+.modal-close::after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.modal-close:active,
+.modal-close:focus {
+  outline: none;
 }
 /*# sourceMappingURL=main.css.map */
