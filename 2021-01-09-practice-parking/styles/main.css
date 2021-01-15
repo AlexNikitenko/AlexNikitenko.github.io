@@ -42,11 +42,6 @@
   background-color: #e3fde4;
 }
 
-.booked-parking {
-  background-color: #681414;
-  color: white;
-}
-
 .overlay {
   background-color: gray;
   opacity: 0.9;
@@ -70,7 +65,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 30px 0;
+  padding: 35px 0;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;

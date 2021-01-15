@@ -106,6 +106,8 @@ btnCloseEls.forEach(element => {
     element.addEventListener('click', removeModalShow);
 });
 
+let inputTime;
+
 mainEl.addEventListener('click', (ev) => {
     if (ev.target.id !== '') {
         let i = Number(ev.target.id);
@@ -117,12 +119,13 @@ mainEl.addEventListener('click', (ev) => {
             overlayEl.classList.add('modal-show');
             inpFromTimeEl.value = moment().format('HH:mm');
 
+            let startTime = '09:00';
+            let endTime = '18:00';
+            let timeFormat = "HH:mm";
+            let inputTime = inpFromTimeEl.value;
+            let timeVal;
             inpFromTimeEl.addEventListener('input', (evt) => {
-                let timeVal = evt.target.value;
-                let startTime = '09:00';
-                let endTime = '18:00';
-                let timeFormat = "HH:mm";
-
+                timeVal = evt.target.value;
                 if (moment(timeVal, timeFormat).isBetween(moment(startTime, timeFormat), moment(endTime, timeFormat)) &&
                     (tempFreePlaces <= (PLACES * 2 / 10))) {
                     messageEl.innerHTML = 'We recommend not to occupy a parking space due to the small number of free spaces';
@@ -130,6 +133,15 @@ mainEl.addEventListener('click', (ev) => {
                     messageEl.innerHTML = 'Book your parking space:';
                 }
             })
+
+            if (moment(inputTime, timeFormat).isBetween(moment(startTime, timeFormat), moment(endTime, timeFormat)) &&
+                (tempFreePlaces <= (PLACES * 2 / 10))) {
+                messageEl.innerHTML = 'We recommend not to occupy a parking space due to the small number of free spaces';
+            } else {
+                messageEl.innerHTML = 'Book your parking space:';
+            }
+
+
 
             const clickBtnOk = () => {
 
@@ -171,3 +183,24 @@ mainEl.addEventListener('click', (ev) => {
 
 
 })
+
+// inpFromTimeEl.addEventListener('input', (evt) => {
+//     let tempOccuPlaces = occuPlaces();
+//     let tempFreePlaces = PLACES - tempOccuPlaces;
+//     let timeVal = evt.target.value;
+//     let startTime1 = inpFromTimeEl.value;
+//     console.log(timeVal, startTime1);
+//     let startTime = '09:00';
+//     let endTime = '23:00';
+//     let timeFormat = "HH:mm";
+
+//     if (moment(inputTime, timeFormat).isBetween(moment(startTime, timeFormat), moment(endTime, timeFormat)) &&
+//         (tempFreePlaces <= (PLACES * 2 / 10))) {
+//         messageEl.innerHTML = 'We recommend not to occupy a parking space due to the small number of free spaces';
+//     } else if (moment(timeVal, timeFormat).isBetween(moment(startTime, timeFormat), moment(endTime, timeFormat)) &&
+//         (tempFreePlaces <= (PLACES * 2 / 10))) {
+//         messageEl.innerHTML = 'We recommend not to occupy a parking space due to the small number of free spaces';
+//     } else {
+//         messageEl.innerHTML = 'Book your parking space:';
+//     }
+// })
