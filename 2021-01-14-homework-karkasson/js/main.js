@@ -119,7 +119,7 @@ fieldEl.addEventListener('click', (ev) => {
         for (let i = 0; i < shuffledCardDeck.length; i++) {
             const tempCard = document.querySelector(`#card${index}`)
             str = shuffledCardDeck[index];
-            console.log(str[0]);
+            // console.log(str[0]);
             ev.target.classList.add(`${str[0]}`);
             shuffledCardDeck.splice(index, 1);
             console.log(shuffledCardDeck);

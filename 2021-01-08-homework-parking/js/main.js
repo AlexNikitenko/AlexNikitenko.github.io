@@ -137,6 +137,8 @@ mainEl.addEventListener('click', (ev) => {
 
                 arrPlaces[i].time = inpFromTimeEl.value;
                 arrPlaces[i].occupied = true;
+                console.log(mainEl);
+                mainEl.target.style.backgroundColor = "red";
                 removeModalShow();
                 renderParkPlaces();
                 refreshInfoBoard();
