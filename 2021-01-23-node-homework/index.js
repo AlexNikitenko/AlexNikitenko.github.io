@@ -40,22 +40,20 @@ request('https://dou.ua/', function (error, response, body) {
 // const https = require('https');
 
 const http = require('http');
- 
+
 http.createServer((request, response) => {
-     
-  response.setHeader("Content-Type", "text/html");
-  let bodyStart = '<!DOCTYPE html>'+
-  '<html>'+
-  '<head>'+
-  '<title>First https server</title>'+
-  '<meta http-equiv="Content-Type" content="text/html; '+
-  'charset=UTF-8" />'+
-  '</head>'+
-  '<body>'+
-  '<h2>Картинки с доу:</h2>';
+  response.writeHead(200);
+  let bodyStart = `<!DOCTYPE html>
+  <html>
+  <head>
+  <title>First https server</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+  <body>
+  <h2>Картинки с доу:</h2>`;
   
-  let bodyEnd = '</body>'+
-  '</html>';
+  let bodyEnd = `</body>
+  </html>`;
   let bodyCenter = '';
   fs.readFile('./arr.txt', (err, data) => {
     if (err) {
