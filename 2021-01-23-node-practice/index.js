@@ -37,31 +37,31 @@ request('https://auto.ria.com/uk/search/?indexName=auto,order_auto,newauto_searc
 
       http.createServer((request, response) => {
         response.writeHead(200);
-        let bodyStart = `<!DOCTYPE html>
-        <html>
-        <head>
-        <title>First https server</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        </head>
-        <body>
-        <table border="1">
-        <caption>Таблица MMY</caption>
-        <tr>
-          <th>Model</th>
-          <th>Year</th>
-          <th>Price, USD</th>
-        </tr>`;
         
-        let bodyEnd = `</table>
-        </body>
-        </html>`;
-        let bodyCenter = '';
-
+          let bodyCenter = '';
           resultArr.forEach(el => {
-            bodyCenter = bodyCenter + `<tr><td>${el.Model}</td><td>${el.Year}</td><td>${el.Price}</td></tr>`;
+           bodyCenter = `${bodyCenter}<tr><td>${el.Model}</td><td>${el.Year}</td><td>${el.Price}</td></tr>`;
           });
+          
+          body = `<!DOCTYPE html>
+            <html>
+            <head>
+            <title>First https server</title>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            </head>
+            <body>
+            <table border="1">
+            <caption>Таблица MMY</caption>
+            <tr>
+              <th>Model</th>
+              <th>Year</th>
+              <th>Price, USD</th>
+            </tr>
+            ${bodyCenter}
+            </table>
+            </body>
+            </html>`;
 
-          let body = bodyStart + bodyCenter + bodyEnd;
           response.end(body);
       
       }).listen(8080);
