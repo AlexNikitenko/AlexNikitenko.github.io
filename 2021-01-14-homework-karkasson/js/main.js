@@ -28,7 +28,29 @@ const shuffledCardsEl = document.querySelector('.shuffled-cards');
 const leftCardsEl = document.querySelector('.cards-left');
 
 const typeLeft = 10;
-const arrCardTypes = ['corner', 'imprasse', 'stick'];
+const arrCardTypes = [
+  {
+    name: 'corner',
+    top: false,
+    right: true,
+    bottom: true,
+    left: false,
+  }, 
+  {
+    name: 'imprasse',
+    top: false,
+    right: true,
+    bottom: false,
+    left: true,
+  }, 
+  {
+    name: 'stick',
+    top: false,
+    right: true,
+    bottom: false,
+    left: false,
+  }
+];
 
 let startCardDeck = [];
 let shuffledCardDeck = [];
@@ -44,6 +66,7 @@ const createCardDeck = () => {
     for (let i = 0; i < arrCardTypes.length; i++) {
         for (let j = 0; j < typeLeft; j++) {
             arrTemp.push(arrCardTypes[i]);
+            // console.log(arrCardTypes[i]);
         };
     };
     return arrTemp;
@@ -83,7 +106,7 @@ const genField = () => {
         newArr[i] = [];
         for (let j = 0; j < HEIGHT; j++) {
             newArr[i][j] = null;
-            str = `${str}<div class="cell" id="${i}${j+1}"></div>`;
+            str = `${str}<div class="cell" id="${i}${j}"></div>`;
         };
     };
     fieldEl.innerHTML = str;
@@ -92,15 +115,15 @@ const genField = () => {
     return newArr;
 };
 
-genField();
+let gameField = genField();
 
-console.log(genField());
+console.log(gameField);
 
 const renderDeck = () => {
     let tempArr = shuffledCardDeck;
     let str = '';
     for (let i = 0; i < tempArr.length; i++) {
-        str = `${str}<div class="cards ${tempArr[i]}" id="card${i}" style="z-index: ${i}; position: absolute;"></div>`;
+        str = `${str}<div class="cards ${tempArr[i][0].name}" id="card${i}" style="z-index: ${i}; position: absolute;"></div>`;
     }
     shuffledCardsEl.innerHTML = str;
     return tempArr;
@@ -109,22 +132,38 @@ renderDeck();
 
 const leftCards = () => {
     return leftCardsEl.innerHTML = `Cards Left: ${shuffledCardDeck.length}`;
-}
+};
+
+const renderField = (array, elem) => {
+  // let newArr = [];
+  for (let i = 0; i < WIDTH; i++) {
+      // newArr[i] = [];
+      for (let j = 0; j < HEIGHT; j++) {
+          array[j][i] = elem;
+      };
+  };
+  return array;
+};
 
 fieldEl.addEventListener('click', (ev) => {
-    if (ev.target.id !== '') {
-        let item = Number(ev.target.id);
+    if (ev.target.id !== '' && !ev.target.classList.contains('busy')) {
+        // let item = Number(ev.target.id);
         let str = '';
-        let index = shuffledCardDeck.length - 1;
+        let cardIndex = shuffledCardDeck.length - 1;
         for (let i = 0; i < shuffledCardDeck.length; i++) {
-            const tempCard = document.querySelector(`#card${index}`)
-            str = shuffledCardDeck[index];
+            // const tempCard = document.querySelector(`#card${index}`)
+            str = shuffledCardDeck[cardIndex];
             // console.log(str[0]);
-            ev.target.classList.add(`${str[0]}`);
-            shuffledCardDeck.splice(index, 1);
+            ev.target.classList.add(`${str[0].name}`);
+            ev.target.classList.add('busy');
+            console.log(str);
+            shuffledCardDeck.splice(cardIndex, 1);   //убираем из колоды вытянутую карту
             console.log(shuffledCardDeck);
             renderDeck();
             leftCards();
+
+            // renderField(gameField, str[0]);
+            gameField.map(elem => elem[0] = str[0]);
         }
     } else console.log('We have 1 card');
 });
