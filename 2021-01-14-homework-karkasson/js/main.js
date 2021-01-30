@@ -35,22 +35,26 @@ const arrCardTypes = [
     right: true,
     bottom: true,
     left: false,
+    empty: false,
   }, 
   {
     name: 'imprasse',
     top: false,
     right: true,
     bottom: false,
-    left: true,
+    left: false,
+    empty: false,
   }, 
   {
     name: 'stick',
     top: false,
     right: true,
     bottom: false,
-    left: false,
+    left: true,
+    empty: false,
   }
 ];
+
 
 let startCardDeck = [];
 let shuffledCardDeck = [];
@@ -66,14 +70,12 @@ const createCardDeck = () => {
     for (let i = 0; i < arrCardTypes.length; i++) {
         for (let j = 0; j < typeLeft; j++) {
             arrTemp.push(arrCardTypes[i]);
-            // console.log(arrCardTypes[i]);
         };
     };
     return arrTemp;
 };
 
 startCardDeck = createCardDeck();
-// arrEls[0].innerHTML = startCardDeck.join(',');
 
 const shuffleCardDeck = (arr) => {
     const arrTemp = [];
@@ -91,33 +93,45 @@ const shuffleCardDeck = (arr) => {
 
 shuffledCardDeck = shuffleCardDeck(startCardDeck);
 console.log(shuffledCardDeck);
-// arrEls[1].innerHTML = startCardDeck.join(',');
-// arrEls[2].innerHTML = shuffledCardDeck.join(',');
-
-//Field
 
 const WIDTH = 8;
 const HEIGHT = 8;
 
-const genField = () => {
-    let str = '';
-    let newArr = [];
-    for (let i = 0; i < WIDTH; i++) {
-        newArr[i] = [];
-        for (let j = 0; j < HEIGHT; j++) {
-            newArr[i][j] = null;
-            str = `${str}<div class="cell" id="${i}${j}"></div>`;
-        };
+const arrCells = [];
+
+const generateCells = () => {
+  for (let i = 0; i < WIDTH; i++) {
+    for (let j = 0; j < HEIGHT; j++) {
+      arrCells.push({
+          id: `${j}${i}`,
+          empty: true,
+          // name: '',
+          // top: false,
+          // right: false,
+          // bottom: false,
+          // left: false,
+      });
+     
+       
     };
-    fieldEl.innerHTML = str;
-    fieldEl.style.gridTemplateColumns = `repeat(${WIDTH}, 1fr)`;
-    fieldEl.style.gridTemplateRows = `repeat(${HEIGHT}, 1fr)`;
-    return newArr;
+  };
+  return arrCells;
 };
 
-let gameField = genField();
+generateCells();
 
-console.log(gameField);
+const renderGameField = () => {
+  fieldEl.innerHTML = arrCells.reduce((str, el) => {
+    return `${ str }
+      <div id="${ el.id }" class="cell">
+      </div>
+      `;
+  }, '');
+    fieldEl.style.gridTemplateColumns = `repeat(${WIDTH}, 1fr)`;
+    fieldEl.style.gridTemplateRows = `repeat(${HEIGHT}, 1fr)`;
+};
+
+renderGameField();
 
 const renderDeck = () => {
     let tempArr = shuffledCardDeck;
@@ -134,36 +148,88 @@ const leftCards = () => {
     return leftCardsEl.innerHTML = `Cards Left: ${shuffledCardDeck.length}`;
 };
 
-const renderField = (array, elem) => {
-  // let newArr = [];
-  for (let i = 0; i < WIDTH; i++) {
-      // newArr[i] = [];
-      for (let j = 0; j < HEIGHT; j++) {
-          array[j][i] = elem;
-      };
-  };
-  return array;
+const compareFieldsAround = (x, y) => {
+  if ((x > 0) || (arrCells[x][y].left !== arrCells[x - 1][y].right)) { //Проверка ячейки слева
+    return false;
+  }
+  if ((y > 0) || (arrCells[x][y].top !== arrCells[x][y - 1].bottom)) { //Проверка ячейки сверху
+    return false;
+  }
+  if ((x < WIDTH - 1) || (arrCells[x][y].right !== arrCells[x + 1][y].left)) { //Проверка ячейки справа
+    return false;
+  }
+  if ((y < HEIGHT - 1) || (arrCells[x][y].bottom !== arrCells[x][y + 1].top)) { //Проверка ячейки снизу
+    return false;
+  }
+  if (arrCells[x - 1][y].empty && arrCells[x][y - 1].empty && arrCells[x + 1][y].empty && arrCells[x][y + 1].empty) {
+    return true;
+  }
+  return true;
 };
 
+// const compareFieldsAround = (x, y) => {
+//   if (((x === 0) && (y === 0)) && (arrCells[x + 1][y].empty)) {  //Проверяем на пустоту ячейки справа при положении 0,0
+//     return;
+//   }
+//   if (((x === 0) && (y === 0)) && (arrCells[x][y + 1].empty)) { //Проверяем на пустоту ячейки снизу при положении 0,0
+//     return;
+//   }
+//   if (((x === 0) && (y === 0)) && (!arrCells[x + 1][y].empty)) {  //Проверяем на заполненность ячейки справа при положении 0,0
+//     if (arrCells[x][y].right !== arrCells[x + 1][y].left) {
+//       return false;
+//     }
+//   }
+//   if (((x === 0) && (y === 0)) && (!arrCells[x][y + 1].empty)) { //Проверяем на заполненность ячейки снизу при положении 0,0
+//     if (arrCells[x][y].bottom !== arrCells[x][y + 1].top) {
+//       return false;
+//     }
+//   }
+//   ///
+//   // if ((x > 0) || (arrCells[x][y].left !== arrCells[x - 1][y].right)) { //Проверка ячейки слева
+//   //   return false;
+//   // }
+//   // if ((y > 0) || (arrCells[x][y].top !== arrCells[x][y - 1].bottom)) { //Проверка ячейки сверху
+//   //   return false;
+//   // }
+//   // if ((x < WIDTH - 1) || (arrCells[x][y].right !== arrCells[x + 1][y].left)) { //Проверка ячейки справа
+//   //   return false;
+//   // }
+//   // if ((y < HEIGHT - 1) || (arrCells[x][y].bottom !== arrCells[x][y + 1].top)) { //Проверка ячейки снизу
+//   //   return false;
+//   // }
+//   return true;
+// };
+
 fieldEl.addEventListener('click', (ev) => {
+
     if (ev.target.id !== '' && !ev.target.classList.contains('busy')) {
-        // let item = Number(ev.target.id);
-        let str = '';
-        let cardIndex = shuffledCardDeck.length - 1;
+        // let str = '';
+        let topCardIndex = shuffledCardDeck.length - 1;
         for (let i = 0; i < shuffledCardDeck.length; i++) {
-            // const tempCard = document.querySelector(`#card${index}`)
-            str = shuffledCardDeck[cardIndex];
-            // console.log(str[0]);
-            ev.target.classList.add(`${str[0].name}`);
+            let topCardArr = shuffledCardDeck[topCardIndex]; //Массив объекта верхней карты
+            const tempId = ev.target.id;
+            const CurrCardCoord = tempId.split('');   //получаем массив координат y,x элемента на который положили карту
+          
+            arrCells[Number(CurrCardCoord[1])][Number(CurrCardCoord[0])] = topCardArr[0];  //передаем объект положенной карты в массив поля x,y
+            console.log(arrCells);
+            console.log(CurrCardCoord[0], CurrCardCoord[1]);
+            
+            let compareResult = compareFieldsAround(Number(CurrCardCoord[0]), Number(CurrCardCoord[1]));
+            console.log(compareResult);
+            if (compareResult) {
+              console.log('Ok');
+            } else {
+              ev.target.classList.add('red-border');
+            }
+        
+            ev.target.classList.add(`${topCardArr[0].name}`);
             ev.target.classList.add('busy');
-            console.log(str);
-            shuffledCardDeck.splice(cardIndex, 1);   //убираем из колоды вытянутую карту
-            console.log(shuffledCardDeck);
+            shuffledCardDeck.splice(topCardIndex, 1);   //убираем из колоды вытянутую карту
             renderDeck();
             leftCards();
-
-            // renderField(gameField, str[0]);
-            gameField.map(elem => elem[0] = str[0]);
+              return;
         }
-    } else console.log('We have 1 card');
+    }
+    
+
 });

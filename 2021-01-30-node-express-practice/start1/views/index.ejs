@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="main">
+      <% for (let i = 0; i < weekArr.length; i++) { %>
+        <div class="cell panel">
+          <%= weekArr[i] %>
+        </div>
+      <% } %>
+
+      <% for (let z = 1; z <= (firstMonthDayNum - 1); z++) { %>
+        <div class="cell">
+        </div>
+      <% }; %>
+      
+      <% for (let j = 1; j <= daysInMonth; j++) { %>
+        
+        <div class="cell">
+          <%= j %>
+        </div>
+      <% } %>
+    </div>
+  </body>
+</html>
