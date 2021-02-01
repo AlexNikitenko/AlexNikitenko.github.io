@@ -198,7 +198,7 @@ fieldEl.addEventListener('click', (ev) => {
             if (!compareResult) {
               ev.target.classList.add('red-border');
             } else {
-              console.log('Ok');
+              console.log('Mission success');
             }
         
             ev.target.classList.add(`${topCardArr[0].name}`);
