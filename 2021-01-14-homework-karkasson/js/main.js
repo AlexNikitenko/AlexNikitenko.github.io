@@ -97,12 +97,33 @@ console.log(shuffledCardDeck);
 const WIDTH = 8;
 const HEIGHT = 8;
 
-const arrCells = [];
+// const arrCells = [];
+
+// const generateCells = () => {
+//   for (let i = 0; i < WIDTH; i++) {
+//     for (let j = 0; j < HEIGHT; j++) {
+//       arrCells.push({
+//           id: `${j}${i}`,
+//           empty: true,
+//           // name: '',
+//           // top: false,
+//           // right: false,
+//           // bottom: false,
+//           // left: false,
+//       });
+     
+       
+//     };
+//   };
+//   return arrCells;
+// };
 
 const generateCells = () => {
+  let newArr = [];
   for (let i = 0; i < WIDTH; i++) {
+    newArr[i] = [];
     for (let j = 0; j < HEIGHT; j++) {
-      arrCells.push({
+      newArr[i][j] = {
           id: `${j}${i}`,
           empty: true,
           // name: '',
@@ -110,25 +131,41 @@ const generateCells = () => {
           // right: false,
           // bottom: false,
           // left: false,
-      });
+      };
      
        
     };
   };
-  return arrCells;
+  return newArr;
 };
 
-generateCells();
+let arrCells = generateCells();
+console.log(arrCells);
+console.log(arrCells.length);
+
+// const renderGameField = () => {
+//   fieldEl.innerHTML = arrCells.reduce((str, el) => {
+//     return `${ str }
+//       <div id="${ el[0].id }" class="cell">
+//       </div>
+//       `;
+//   }, '');
+//     fieldEl.style.gridTemplateColumns = `repeat(${WIDTH}, 1fr)`;
+//     fieldEl.style.gridTemplateRows = `repeat(${HEIGHT}, 1fr)`;
+// };
 
 const renderGameField = () => {
-  fieldEl.innerHTML = arrCells.reduce((str, el) => {
-    return `${ str }
-      <div id="${ el.id }" class="cell">
-      </div>
-      `;
-  }, '');
-    fieldEl.style.gridTemplateColumns = `repeat(${WIDTH}, 1fr)`;
-    fieldEl.style.gridTemplateRows = `repeat(${HEIGHT}, 1fr)`;
+  let str = '';
+  for (let i = 0; i < WIDTH; i++) {
+    for (let j = 0; j < HEIGHT; j++) {
+      str = `${ str }<div id="${j}${i}" class="cell"></div>`;
+    };
+  };
+    fieldEl.innerHTML = str;
+      fieldEl.style.gridTemplateColumns = `repeat(${WIDTH}, 1fr)`;
+      fieldEl.style.gridTemplateRows = `repeat(${HEIGHT}, 1fr)`;
+  
+  
 };
 
 renderGameField();
@@ -148,79 +185,397 @@ const leftCards = () => {
     return leftCardsEl.innerHTML = `Cards Left: ${shuffledCardDeck.length}`;
 };
 
-const compareFieldsAround = (x, y) => {
-  if ((x > 0) || (arrCells[x][y].left !== arrCells[x - 1][y].right)) { //Проверка ячейки слева
-    return false;
+
+const compareLeftField = (x, y) => {
+  if (Number(x) > 0) {
+    if (!arrCells[Number(x) - 1][Number(y)].empty) {   //Проверка объекта левой ячейки
+      if (arrCells[Number(x)][Number(y)].left === arrCells[Number(x) - 1][Number(y)].right) {
+        return true;
+      } else return false;
+    } else return;
   }
-  if ((y > 0) || (arrCells[x][y].top !== arrCells[x][y - 1].bottom)) { //Проверка ячейки сверху
-    return false;
-  }
-  if ((x < WIDTH - 1) || (arrCells[x][y].right !== arrCells[x + 1][y].left)) { //Проверка ячейки справа
-    return false;
-  }
-  if ((y < HEIGHT - 1) || (arrCells[x][y].bottom !== arrCells[x][y + 1].top)) { //Проверка ячейки снизу
-    return false;
-  }
-  if (arrCells[x - 1][y].empty && arrCells[x][y - 1].empty && arrCells[x + 1][y].empty && arrCells[x][y + 1].empty) {
-    return true;
-  }
-  return true;
 };
 
-// const compareFieldsAround = (x, y) => {
-//   if (((x === 0) && (y === 0)) && (arrCells[x + 1][y].empty)) {  //Проверяем на пустоту ячейки справа при положении 0,0
-//     return;
-//   }
-//   if (((x === 0) && (y === 0)) && (arrCells[x][y + 1].empty)) { //Проверяем на пустоту ячейки снизу при положении 0,0
-//     return;
-//   }
-//   if (((x === 0) && (y === 0)) && (!arrCells[x + 1][y].empty)) {  //Проверяем на заполненность ячейки справа при положении 0,0
-//     if (arrCells[x][y].right !== arrCells[x + 1][y].left) {
-//       return false;
-//     }
-//   }
-//   if (((x === 0) && (y === 0)) && (!arrCells[x][y + 1].empty)) { //Проверяем на заполненность ячейки снизу при положении 0,0
-//     if (arrCells[x][y].bottom !== arrCells[x][y + 1].top) {
-//       return false;
-//     }
-//   }
-//   ///
-//   // if ((x > 0) || (arrCells[x][y].left !== arrCells[x - 1][y].right)) { //Проверка ячейки слева
-//   //   return false;
-//   // }
-//   // if ((y > 0) || (arrCells[x][y].top !== arrCells[x][y - 1].bottom)) { //Проверка ячейки сверху
-//   //   return false;
-//   // }
-//   // if ((x < WIDTH - 1) || (arrCells[x][y].right !== arrCells[x + 1][y].left)) { //Проверка ячейки справа
-//   //   return false;
-//   // }
-//   // if ((y < HEIGHT - 1) || (arrCells[x][y].bottom !== arrCells[x][y + 1].top)) { //Проверка ячейки снизу
-//   //   return false;
-//   // }
-//   return true;
-// };
+const compareRightField = (x, y) => {
+  if (Number(x) < WIDTH - 1) {
+    if (!arrCells[Number(x) + 1][Number(y)].empty) {   //Проверка объекта правой ячейки
+      if (arrCells[Number(x)][Number(y)].right === arrCells[Number(x) + 1][Number(y)].left) {
+        return true;
+      } else return false;
+    }
+  }
+};
+
+const compareTopField = (x, y) => {
+  if (Number(y) > 0) {
+    if (!arrCells[Number(x)][Number(y) - 1].empty) {   //Проверка объекта верхней ячейки
+      if (arrCells[Number(x)][Number(y)].top === arrCells[Number(x)][Number(y) - 1].bottom) {
+        return true;
+      } else return false;
+    } else return;
+  }
+};
+
+const compareBottomField = (x, y) => {
+  if (Number(y) < HEIGHT - 1) { 
+    if (!arrCells[Number(x)][Number(y) + 1].empty) {  //Проверка объекта нижней ячейки
+      if (arrCells[Number(x)][Number(y)].bottom === arrCells[Number(x)][Number(y) + 1].top) {
+        return true;
+      } else return false;
+    } else return;
+  }
+};
+
+const compareFieldsAround = (x, y) => {
+
+  // if (Number(x) > 0) {   //Проверка объекта левой ячейки
+  //   if (!arrCells[Number(x) - 1][Number(y)].empty) {
+  //     if (arrCells[Number(x)][Number(y)].left === arrCells[Number(x) - 1][Number(y)].right) {
+  //       return true;
+  //     } else return;
+  //   }
+  // }
+
+  // if (Number(x) < WIDTH - 1) {    //Проверка объекта правой ячейки
+  //   if (!arrCells[Number(x) + 1][Number(y)].empty) {
+  //     if (arrCells[Number(x)][Number(y)].right === arrCells[Number(x) + 1][Number(y)].left) {
+  //       return true;
+  //     } else return; 
+  //   }
+  // }
+
+  // if (Number(y) > 0) {    //Проверка объекта верхней ячейки
+  //   if (!arrCells[Number(x)][Number(y) - 1].empty) {
+  //     if (arrCells[Number(x)][Number(y)].top === arrCells[Number(x)][Number(y) - 1].bottom) {
+  //       return true;
+  //     } else return; 
+  //   }
+  // }
+
+  // if (Number(y) < HEIGHT - 1) {    //Проверка объекта нижней ячейки
+  //   if (!arrCells[Number(x)][Number(y) + 1].empty) {
+  //     if (arrCells[Number(x)][Number(y)].bottom === arrCells[Number(x)][Number(y) + 1].top) {
+  //       return true;
+  //     } else return; 
+  //   }
+  // }
+
+  
+
+  // return true;
+
+/////////////////////////////////////////
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  if ((Number(x) === 0) && (Number(y) === 0)) {         //Проверка в положении 0, 0
+    if (!arrCells[Number(x)][Number(y) + 1].empty) {  //Проверка объекта нижней ячейки
+      if (arrCells[Number(x)][Number(y)].bottom === arrCells[Number(x)][Number(y) + 1].top) {
+        return true;
+      } 
+      return false;
+    }
+    if (!arrCells[Number(x) + 1][Number(y)].empty) {   //Проверка объекта правой ячейки
+      if (arrCells[Number(x)][Number(y)].right === arrCells[Number(x) + 1][Number(y)].left) {
+        return true;
+      } 
+      return false;
+    }
+    if ((arrCells[Number(x)][Number(y) + 1].empty) && (arrCells[Number(x) + 1][Number(y)].empty)) {
+      return true;
+    }
+  }
+
+  if ((Number(x) === 0) && (Number(y) === HEIGHT - 1)) {  //Проверка в положении 0, H - 1
+    if (!arrCells[Number(x)][Number(y) - 1].empty) {   //Проверка объекта верхней ячейки
+      if (arrCells[Number(x)][Number(y)].top === arrCells[Number(x)][Number(y) - 1].bottom) {
+        return true;
+      } 
+      return false;
+    }
+    if (!arrCells[Number(x) + 1][Number(y)].empty) {   //Проверка объекта правой ячейки
+      if (arrCells[Number(x)][Number(y)].right === arrCells[Number(x) + 1][Number(y)].left) {
+        return true;
+      } 
+      return false;
+    }
+    if ((arrCells[Number(x)][Number(y) - 1].empty) && (arrCells[Number(x) + 1][Number(y)].empty)) {
+      return true;
+    }
+  }
+
+  if ((Number(x) === WIDTH - 1) && (Number(y) === 0)) {  //Проверка в положении W - 1, 0
+    if (!arrCells[Number(x) - 1][Number(y)].empty) {   //Проверка объекта левой ячейки
+      if (arrCells[Number(x)][Number(y)].left === arrCells[Number(x) - 1][Number(y)].right) {
+        return true;
+      }
+      return false;
+    }
+    if (!arrCells[Number(x)][Number(y) + 1].empty) {  //Проверка объекта нижней ячейки
+      if (arrCells[Number(x)][Number(y)].bottom === arrCells[Number(x)][Number(y) + 1].top) {
+        return true;
+      } 
+      return false;
+    }
+    if ((arrCells[Number(x) - 1][Number(y)].empty) && (arrCells[Number(x)][Number(y) + 1].empty)) {
+      return true;
+    }
+  }
+
+  if ((Number(x) === WIDTH - 1) && (Number(y) === HEIGHT - 1)) {  //Проверка в положении W - 1, H - 1
+    if (!arrCells[Number(x) - 1][Number(y)].empty) {   //Проверка объекта левой ячейки
+      if (arrCells[Number(x)][Number(y)].left === arrCells[Number(x) - 1][Number(y)].right) {
+        return true;
+      }
+      return false;
+    }
+    if (!arrCells[Number(x)][Number(y) - 1].empty) {   //Проверка объекта верхней ячейки
+      if (arrCells[Number(x)][Number(y)].top === arrCells[Number(x)][Number(y) - 1].bottom) {
+        return true;
+      }
+      return false;
+    }
+    if ((arrCells[Number(x) - 1][Number(y)].empty) && (arrCells[Number(x)][Number(y) - 1].empty)) {
+      return true;
+    }
+  }
+
+  if ((Number(x) === 0) && (Number(y) > 0) && (Number(y) < HEIGHT - 1)) {  //Проверка крайнего левого ряда при y = (0; H - 1)
+    if (!arrCells[Number(x) + 1][Number(y)].empty) {   //Проверка объекта правой ячейки
+      if (arrCells[Number(x)][Number(y)].right === arrCells[Number(x) + 1][Number(y)].left) {
+        return true;
+      } 
+      return false;
+    }
+    if (!arrCells[Number(x)][Number(y) - 1].empty) {   //Проверка объекта верхней ячейки
+      if (arrCells[Number(x)][Number(y)].top === arrCells[Number(x)][Number(y) - 1].bottom) {
+        return true;
+      }
+      return false;
+    }
+    if (!arrCells[Number(x)][Number(y) + 1].empty) {  //Проверка объекта нижней ячейки
+      if (arrCells[Number(x)][Number(y)].bottom === arrCells[Number(x)][Number(y) + 1].top) {
+        return true;
+      } 
+      return false;
+    }
+    if ((arrCells[Number(x) + 1][Number(y)].empty) && (arrCells[Number(x)][Number(y) - 1].empty) && (arrCells[Number(x)][Number(y) + 1].empty)) {
+      return true;
+    }
+  }
+
+  if ((Number(x) === WIDTH - 1) && (Number(y) > 0) && (Number(y) < HEIGHT - 1)) {  //Проверка крайнего правого ряда при y = (0; H - 1)
+    if (!arrCells[Number(x) - 1][Number(y)].empty) {   //Проверка объекта левой ячейки
+      if (arrCells[Number(x)][Number(y)].left === arrCells[Number(x) - 1][Number(y)].right) {
+        return true;
+      }
+      return false;
+    }
+    if (!arrCells[Number(x)][Number(y) - 1].empty) {   //Проверка объекта верхней ячейки
+      if (arrCells[Number(x)][Number(y)].top === arrCells[Number(x)][Number(y) - 1].bottom) {
+        return true;
+      }
+      return false;
+    }
+    if (!arrCells[Number(x)][Number(y) + 1].empty) {  //Проверка объекта нижней ячейки
+      if (arrCells[Number(x)][Number(y)].bottom === arrCells[Number(x)][Number(y) + 1].top) {
+        return true;
+      } 
+      return false;
+    }
+    if ((arrCells[Number(x) - 1][Number(y)].empty) && (arrCells[Number(x)][Number(y) - 1].empty) && (arrCells[Number(x)][Number(y) + 1].empty)) {
+      return true;
+    }
+  }
+
+  if ((Number(y) === 0) && (Number(x) > 0) && (Number(x) < WIDTH - 1)) {  //Проверка крайнего верхнего ряда при x = (0; W - 1)
+    if (!arrCells[Number(x)][Number(y) + 1].empty) {  //Проверка объекта нижней ячейки
+      if (arrCells[Number(x)][Number(y)].bottom === arrCells[Number(x)][Number(y) + 1].top) {
+        return true;
+      } 
+      return false;
+    }
+    if (!arrCells[Number(x) - 1][Number(y)].empty) {   //Проверка объекта левой ячейки
+      if (arrCells[Number(x)][Number(y)].left === arrCells[Number(x) - 1][Number(y)].right) {
+        return true;
+      }
+      return false;
+    }
+    if (!arrCells[Number(x) + 1][Number(y)].empty) {   //Проверка объекта правой ячейки
+      if (arrCells[Number(x)][Number(y)].right === arrCells[Number(x) + 1][Number(y)].left) {
+        return true;
+      } 
+      return false;
+    }
+    if ((arrCells[Number(x)][Number(y) + 1].empty) && (arrCells[Number(x) - 1][Number(y)].empty) && (arrCells[Number(x) + 1][Number(y)].empty)) {
+      return true;
+    }
+  }
+
+  if ((Number(y) === HEIGHT - 1) && (Number(x) > 0) && (Number(x) < WIDTH - 1)) {  //Проверка крайнего нижнего ряда при x = (0; W - 1)
+    if (!arrCells[Number(x)][Number(y) - 1].empty) {   //Проверка объекта верхней ячейки
+      if (arrCells[Number(x)][Number(y)].top === arrCells[Number(x)][Number(y) - 1].bottom) {
+        return true;
+      }
+      return false;
+    }
+    if (!arrCells[Number(x) - 1][Number(y)].empty) {   //Проверка объекта левой ячейки
+      if (arrCells[Number(x)][Number(y)].left === arrCells[Number(x) - 1][Number(y)].right) {
+        return true;
+      }
+      return false;
+    }
+    if (!arrCells[Number(x) + 1][Number(y)].empty) {   //Проверка объекта правой ячейки
+      if (arrCells[Number(x)][Number(y)].right === arrCells[Number(x) + 1][Number(y)].left) {
+        return true;
+      } 
+      return false;
+    }
+    if ((arrCells[Number(x)][Number(y) - 1].empty) && (arrCells[Number(x) - 1][Number(y)].empty) && (arrCells[Number(x) + 1][Number(y)].empty)) {
+      return true;
+    }
+  }
+
+  if ((Number(x) > 0) && (Number(x) < WIDTH - 1) && (Number(y) > 0) && (Number(y) < HEIGHT - 1)) {  //Проверка всей центральной части поля(все кроме крайних рядов)
+    if (!arrCells[Number(x)][Number(y) - 1].empty) {   //Проверка объекта верхней ячейки
+      if (arrCells[Number(x)][Number(y)].top === arrCells[Number(x)][Number(y) - 1].bottom) {
+        return true;
+      }
+    }
+    if (!arrCells[Number(x) - 1][Number(y)].empty) {   //Проверка объекта левой ячейки
+      if (arrCells[Number(x)][Number(y)].left === arrCells[Number(x) - 1][Number(y)].right) {
+        return true;
+      }
+    }
+    if (!arrCells[Number(x) + 1][Number(y)].empty) {   //Проверка объекта правой ячейки
+      if (arrCells[Number(x)][Number(y)].right === arrCells[Number(x) + 1][Number(y)].left) {
+        return true;
+      }
+    }
+    if (!arrCells[Number(x)][Number(y) + 1].empty) {  //Проверка объекта нижней ячейки
+      if (arrCells[Number(x)][Number(y)].bottom === arrCells[Number(x)][Number(y) + 1].top) {
+        return true;
+      }
+    }
+    if ((arrCells[Number(x)][Number(y) - 1].empty) && (arrCells[Number(x) - 1][Number(y)].empty) && 
+    (arrCells[Number(x) + 1][Number(y)].empty) && (arrCells[Number(x)][Number(y) + 1].empty)) {
+      return true;
+    }
+    return false;
+  }
+
+  // return false;
+
+};
+
+const refreshArr = (x, y, obj) => {
+  return arrCells[x][y] = obj;
+}
 
 fieldEl.addEventListener('click', (ev) => {
-
+  const tempId = ev.target.id;
+  const CurrCardArr = tempId.split('');   //получаем массив координат y,x элемента на который положили карту
+  console.log("Curr Card Coord: ", CurrCardArr);
     if (ev.target.id !== '' && !ev.target.classList.contains('busy')) {
-        // let str = '';
+        // let topCardArr = '';
         let topCardIndex = shuffledCardDeck.length - 1;
         for (let i = 0; i < shuffledCardDeck.length; i++) {
             let topCardArr = shuffledCardDeck[topCardIndex]; //Массив объекта верхней карты
-            const tempId = ev.target.id;
-            const CurrCardCoord = tempId.split('');   //получаем массив координат y,x элемента на который положили карту
           
-            arrCells[Number(CurrCardCoord[1])][Number(CurrCardCoord[0])] = topCardArr[0];  //передаем объект положенной карты в массив поля x,y
-            console.log(arrCells);
-            console.log(CurrCardCoord[0], CurrCardCoord[1]);
             
-            let compareResult = compareFieldsAround(Number(CurrCardCoord[0]), Number(CurrCardCoord[1]));
-            console.log(compareResult);
-            if (compareResult) {
-              console.log('Ok');
-            } else {
+            refreshArr(Number(CurrCardArr[0]), Number(CurrCardArr[1]), topCardArr[0]);   //передаем объект положенной карты в массив поля x,y
+            // arrCells[Number(CurrCardArr[1])][Number(CurrCardArr[0])] = topCardArr[0];  //передаем объект положенной карты в массив поля x,y
+            console.log(arrCells);
+            // const currCoord = [Number(CurrCardArr[0]), Number(CurrCardArr[1])];
+            // const leftCoord = [Number(CurrCardArr[0]) - 1, Number(CurrCardArr[1])];
+            // const rightCoord = [Number(CurrCardArr[0]) + 1, Number(CurrCardArr[1])];
+            // const topCoord = [Number(CurrCardArr[0]), Number(CurrCardArr[1]) - 1];
+            // const bottomCoord = [Number(CurrCardArr[0]), Number(CurrCardArr[1]) + 1];
+
+            // console.log('Curr Coord:', currCoord);
+            // console.log('Left Coord:', leftCoord);
+            // console.log('Right Coord:', rightCoord);
+            // console.log('Top Coord:', topCoord);
+            // console.log('Bottom Coord:', bottomCoord);
+
+            // const currObj = arrCells[currCoord[0]][currCoord[1]];
+            // const leftObj = arrCells[leftCoord[0]][leftCoord[1]];
+            // const rightObj = arrCells[rightCoord[0]][rightCoord[1]];
+            // const topObj = arrCells[topCoord[0]][topCoord[1]];
+            // const bottomObj = arrCells[bottomCoord[0]][bottomCoord[1]];
+
+            // const currObj = arrCells[Number(CurrCardArr[0])][Number(CurrCardArr[1])];
+            // const leftObj = arrCells[Number(CurrCardArr[0]) - 1][Number(CurrCardArr[1])];
+            // const rightObj = arrCells[Number(CurrCardArr[0]) + 1][Number(CurrCardArr[1])];
+            // const topObj = arrCells[Number(CurrCardArr[0])][Number(CurrCardArr[1]) - 1];
+            // const bottomObj = arrCells[Number(CurrCardArr[0])][Number(CurrCardArr[1]) + 1];
+
+            // console.log('Curr Obj:', currObj);
+            // console.log('Left Obj:', leftObj);
+            // console.log('Right Obj:', rightObj);
+            // console.log('Top Obj:', topObj);
+            // console.log('Bottom Obj:', bottomObj);
+
+            // if (CurrCardArr[0] == 0 && arrCells[Number(CurrCardArr[0])][Number(CurrCardArr[1]).left === true) {
+            //   ev.target.classList.add('red-border');
+            // }
+
+            // if (Number(CurrCardArr[0]) > 0) {
+
+            //   if (!arrCells[Number(CurrCardArr[0]) - 1][Number(CurrCardArr[1])].empty) {
+            //     if (arrCells[Number(CurrCardArr[0])][Number(CurrCardArr[1])].left === arrCells[Number(CurrCardArr[0]) - 1][Number(CurrCardArr[1])].right) {
+            //       console.log('Ok');
+            //     } else {
+            //       ev.target.classList.add('red-border');
+            //     }
+            //   }
+            // }
+
+            // if (Number(CurrCardArr[0]) < WIDTH - 1) {
+            //   if (!arrCells[Number(CurrCardArr[0]) + 1][Number(CurrCardArr[1])].empty) {
+            //     if (arrCells[Number(CurrCardArr[0])][Number(CurrCardArr[1])].right === arrCells[Number(CurrCardArr[0]) + 1][Number(CurrCardArr[1])].left) {
+            //       console.log('Ok');
+            //     } else {
+            //       ev.target.classList.add('red-border');
+            //     }
+            //   }
+            // }
+
+            // if (Number(CurrCardArr[1]) > 0) {
+            //   if (!arrCells[Number(CurrCardArr[0])][Number(CurrCardArr[1]) - 1].empty) {
+            //     if (arrCells[Number(CurrCardArr[0])][Number(CurrCardArr[1])].top === arrCells[Number(CurrCardArr[0])][Number(CurrCardArr[1]) - 1].bottom) {
+            //       console.log('Ok');
+            //     } else {
+            //       ev.target.classList.add('red-border');
+            //     }
+            //   }
+            // }
+
+            // if (Number(CurrCardArr[1]) < HEIGHT - 1) {
+
+            //   if (!arrCells[Number(CurrCardArr[0])][Number(CurrCardArr[1]) + 1].empty) {
+            //     if (arrCells[Number(CurrCardArr[0])][Number(CurrCardArr[1])].bottom === arrCells[Number(CurrCardArr[0])][Number(CurrCardArr[1]) + 1].top) {
+            //       console.log('Ok');
+            //     } else {
+            //       ev.target.classList.add('red-border');
+            //     }
+            //   }
+            // }
+
+
+            const compareResult = compareFieldsAround(CurrCardArr[0], CurrCardArr[1]);
+            if (!compareResult) {
               ev.target.classList.add('red-border');
+            } else {
+              console.log('Ok');
             }
+
+            // console.log('Curr Coord:', Number(CurrCardArr[0]), Number(CurrCardArr[1]));
+            // console.log('Left Coord:', Number(CurrCardArr[0]) - 1, Number(CurrCardArr[1]));
+            // console.log('Right Coord:', Number(CurrCardArr[0]) + 1, Number(CurrCardArr[1]));
+            // console.log('Top Coord:', Number(CurrCardArr[0]), Number(CurrCardArr[1]) - 1));
+            // console.log('Bottom Coord:', Number(CurrCardArr[0]), Number(CurrCardArr[1]) + 1));
+
         
             ev.target.classList.add(`${topCardArr[0].name}`);
             ev.target.classList.add('busy');
