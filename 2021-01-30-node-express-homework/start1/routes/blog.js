@@ -3,15 +3,24 @@ var router = express.Router();
 
 /* GET blog page. */
 router.get('/', function(req, res, next) {
-  res.send('welcome to blog');
+  res.send('Welcome to blog');
 });
 
-router.get('/addArticle', function(req, res, next) {
-  res.send('Add Aticle');
+router.get('/addarticle', function(req, res, next) {
+  
+  const obj = {
+    buttonName: 'addArticle',
+  };
+
+  res.render('addarticle', obj);
 });
 
-router.get('/editArticle', function(req, res, next) {
-  res.send('Edit Aticle');
+router.get('/editarticle', function(req, res, next) {
+  const obj = {
+    buttonName: 'editArticle',
+    str: 'Node или Node.js — программная платформа, основанная на движке V8',
+  }
+  res.render('editarticle', obj);
 });
 
 module.exports = router;
