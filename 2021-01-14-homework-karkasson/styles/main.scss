@@ -1,12 +1,24 @@
 .main {
-    width: 800px;
+    width: 650px;
+    box-sizing: border-box;
+    margin: 100px auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    border: 3px solid black;
+    border-radius: 5px;
 }
 
 .scoreboard {
-    width: 100px;
+    width: 127px;
+    background-color: lightyellow;
+    border-right: 1px solid black;
+    // padding-left: 20px;
+}
+
+.card-deck {
+  width: 100px;
+  margin: 10px auto;
 }
 
 .field {
@@ -36,9 +48,15 @@
 .shuffled-cards {
     width: 62px;
     height: 62px;
+    margin: 0 auto;
     box-sizing: border-box;
     border: 1px solid black;
     position: relative;
+}
+
+.cards-left {
+  margin: 10px auto;
+  text-align: center;
 }
 
 .corner {
